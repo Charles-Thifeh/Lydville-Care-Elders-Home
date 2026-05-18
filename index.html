@@ -1,0 +1,951 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title id="page-title">Loading...</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.13.5/cdn.min.js" defer></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <script>
+    const COMPANY = {
+      name: "Lydville Care & Elders' Home",
+      tagline: "Elders' dignity, loving care...every step of the way.",
+      taglineSub: "A premier senior care facility providing a safe, comfortable, and nurturing environment — located at Isheri Brooks Estate, Kara Isheri, Ogun State.",
+      email: "",
+      phone: "",
+      address: "Isheri Brooks Estate, beside World Filling Station, Kara Isheri, Ogun State",
+      founded: "2021",
+      copyright: "©Lydville Care & Elders' Home 2024",
+      logo: `<i class="fa-solid fa-heart-pulse"></i>`,
+      colors: {
+        primary: "#1A4F9C",
+        accent:  "#38BDF8",
+        light:   "#F0F6FF",
+        card:    "#E0EDFF",
+      },
+      stats: [
+        { value: "100%", label: "Personalised Care Plans" },
+        { value: "24/7", label: "Professional Support" },
+        { value: "4",    label: "Care Services Offered" },
+      ],
+      nav: [
+        { label: "Home",    href: "index.html" },
+        { label: "About Us",    href: "about.html" },
+        { label: "Services",    href: "#services" },
+        { label: "Facilities",  href: "#facilities" },
+        { label: "Testimonials",href: "#testimonials" },
+        { label: "Blog",        href: "#blog" },
+        { label: "Contact Us",  href: "#contact-us" },
+      ],
+      services: [
+        { icon: `<i class="fa-solid fa-house-medical"></i>`,  title: "Assisted Living Facility",      cta: "Learn More",         href: "about.html#services" },
+        { icon: `<i class="fa-solid fa-person-shelter"></i>`, title: "Independent Living Community",  cta: "Learn More",         href: "about.html#services" },
+        { icon: `<i class="fa-solid fa-calendar-check"></i>`, title: "Short Stay Living Facility",    cta: "Learn More",         href: "about.html#services" },
+        { icon: `<i class="fa-solid fa-hand-holding-medical"></i>`, title: "Lydville Care Givers",  cta: "Meet Our Team",      href: "about.html#services" },
+      ],
+      mission: [
+        { icon: `<i class="fa-solid fa-hand-holding-heart"></i>`, text: "Personalised care plans covering physical, medical, emotional, spiritual and social needs" },
+        { icon: `<i class="fa-solid fa-stethoscope"></i>`,        text: "Supervised medication, healthy feeding, and coordinated medical appointments on-site" },
+      ],
+      rooms: [
+        { name: "Assisted Living",      sub: "Daily Support Care",       price: "Enquire for Pricing", color: "#DBEAFE" },
+        { name: "Independent Living",   sub: "Private Residences",       price: "Enquire for Pricing", color: "#E0F2FE" },
+        { name: "Short Stay",           sub: "Temporary / Respite Care", price: "Enquire for Pricing", color: "#EFF6FF" },
+        { name: "Care Giver Support",   sub: "In-Home & On-Site",        price: "Enquire for Pricing", color: "#DBEAFE" },
+      ],
+      facilities: [
+        { icon: `<i class="fa-solid fa-house-chimney"></i>`,     title: "Independent Residences",     desc: "Private, comfortable residences designed for seniors who wish to maintain their independence with access to support when needed." },
+        { icon: `<i class="fa-solid fa-hand-holding-heart"></i>`,title: "Assisted Living Spaces",     desc: "Thoughtfully designed assisted living quarters with on-call staff providing help with daily activities around the clock." },
+        { icon: `<i class="fa-solid fa-people-group"></i>`,      title: "Communal Social Areas",      desc: "Vibrant shared spaces where residents can socialise, build friendships, and enjoy group activities and events." },
+        { icon: `<i class="fa-solid fa-spa"></i>`,               title: "Relaxation & Leisure Centre",desc: "A dedicated leisure centre offering calm, restorative spaces for rest, recreation, and personal wellbeing." },
+        { icon: `<i class="fa-solid fa-utensils"></i>`,          title: "Healthy Dining & Nutrition",  desc: "Nutritious, chef-prepared meals tailored to residents' dietary needs, supporting overall health and vitality." },
+        { icon: `<i class="fa-solid fa-shield-halved"></i>`,     title: "Secure, Modern Campus",      desc: "Our safe and secure campus provides peace of mind for residents and families, with professional staff on-site at all times." },
+      ],
+      blog: [
+        {
+          tag: "Wellness", date: "12 May 2025", readTime: "4 min read", author: "Dr. Sarah Lim",
+          title: "Five Ways Our Residents Stay Active and Vibrant Every Day",
+          excerpt: "From gentle yoga at sunrise to afternoon garden walks, discover how our daily programmes keep residents energised, connected, and thriving throughout every season.",
+          img: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&q=80",
+        },
+        {
+          tag: "Family Guide", date: "28 Apr 2025", readTime: "6 min read", author: "James Hartley",
+          title: "How to Choose the Right Senior Care Community for Your Loved One",
+          excerpt: "Navigating the transition to senior living can feel overwhelming. Our care advisors share the key questions every family should ask before making this important decision.",
+          img: "https://images.unsplash.com/photo-1609220136736-443140cffec6?w=600&q=80",
+        },
+        {
+          tag: "Community", date: "10 Apr 2025", readTime: "5 min read", author: "Emma Clarke",
+          title: "A Year in Review: Celebrations, Milestones & Unforgettable Moments",
+          excerpt: "From birthday parties to art exhibitions, take a look back at the wonderful events and heartwarming stories that made the past year truly special at Lydville Care.",
+          img: "https://images.unsplash.com/photo-1582719508461-905c673771fd?w=600&q=80",
+        },
+      ],
+      testimonials: [
+        { quote: "The staff at Lydville treat my mother like family. She has flourished here — more vibrant and happier than she has been in years. The care and genuine warmth they show every day is truly exceptional.", name: "Patricia Okafor",    role: "Daughter of Resident", highlight: false },
+        { quote: "From my very first tour I knew Lydville was different. The community is warm, the facilities are outstanding, and the care team goes above and beyond. My father looks forward to every single day here.", name: "James Thornton",    role: "Son of Resident",      highlight: true  },
+        { quote: "I have lived at Lydville Care for two years now and I couldn't imagine a better home. The activities, the meals, and the friendships I have made here have given me a new lease on life.",              name: "Mrs. Eleanor Hayes", role: "Long-Term Resident",   highlight: false },
+      ],
+      footerLinks: {
+        "Our Services": ["Assisted Living", "Independent Living", "Short Stay Facility", "Care Giver Support", "Enquire Now"],
+        Company:        ["About Us", "Our Vision & Mission", "Core Values", "Our Team", "News & Events"],
+        "Quick Links":  ["Schedule a Visit", "Careers", "Resources", "FAQs", "Contact Us"],
+      },
+    };
+
+    document.addEventListener("DOMContentLoaded", () => {
+      document.getElementById("page-title").textContent = COMPANY.name;
+      const root = document.documentElement;
+      root.style.setProperty("--color-primary", COMPANY.colors.primary);
+      root.style.setProperty("--color-accent",  COMPANY.colors.accent);
+      root.style.setProperty("--color-light",   COMPANY.colors.light);
+      root.style.setProperty("--color-card",    COMPANY.colors.card);
+      populateNav(); populateHero(); populateAbout(); populateServices();
+      populateMission(); populateStore(); populateStats(); populateFacilities();
+      populateTestimonials(); populateBlog(); populateFooter();
+      initMobileMenu(); initContactForm(); initStoreTabs();
+    });
+
+    const $id = id => document.getElementById(id);
+
+    function populateNav() {
+      $id("nav-logo").innerHTML = `<span class="logo-icon">${COMPANY.logo}</span> <span>${COMPANY.name}</span>`;
+      const links = COMPANY.nav.map(l => `<a href="${l.href}" class="nav-link">${l.label}</a>`).join("");
+      $id("nav-links").innerHTML = links;
+      $id("mobile-nav-links").innerHTML = links;
+    }
+
+    function populateHero() {
+      $id("hero-headline").textContent = COMPANY.tagline;
+      $id("hero-sub").textContent = COMPANY.taglineSub;
+    }
+
+    function populateAbout() {
+      $id("about-title").innerHTML =
+        `<strong>${COMPANY.name}</strong> is a premier senior care facility designed to provide a safe, comfortable, and nurturing environment for seniors in Ogun State, Nigeria.`;
+    }
+
+    function populateServices() {
+      $id("services-list").innerHTML = COMPANY.services.map(s => `
+        <div class="service-card">
+          <div class="service-icon">${s.icon}</div>
+          <h3 class="service-title">${s.title}</h3>
+          <a href="${s.href}" class="service-cta">${s.cta} →</a>
+        </div>`).join("");
+    }
+
+    function populateMission() {
+      $id("mission-list").innerHTML = COMPANY.mission.map(m => `
+        <div class="mission-item">
+          <span class="mission-icon">${m.icon}</span>
+          <p>${m.text}</p>
+          <span style="margin-left:auto;color:var(--color-primary);font-weight:700;">↗</span>
+        </div>`).join("");
+    }
+
+    function populateStore() {
+      $id("store-products").innerHTML = COMPANY.rooms.map(r => `
+        <div class="product-card" style="background:${r.color}">
+          <div class="product-pill-wrap"><i class="fa-solid fa-bed"></i></div>
+          <p class="product-name">${r.name} <span class="product-sub">· ${r.sub}</span></p>
+          <div class="product-footer">
+            <span class="product-price">${r.price}</span>
+            <button class="product-btn" onclick="document.querySelector('#contact-us').scrollIntoView({behavior:'smooth'})">
+              <i class="fa-solid fa-arrow-right" style="font-size:0.7rem;"></i>
+            </button>
+          </div>
+        </div>`).join("");
+    }
+
+    function populateStats() {
+      $id("stats-list").innerHTML = COMPANY.stats.map(s => `
+        <div class="stat-item">
+          <div class="stat-value">${s.value}</div>
+          <div class="stat-label">${s.label}</div>
+        </div>`).join("");
+    }
+
+    function populateFacilities() {
+      $id("facilities-grid").innerHTML = COMPANY.facilities.map(f => `
+        <div class="facility-card">
+          <div class="facility-icon-wrap">${f.icon}</div>
+          <h3 class="facility-title">${f.title}</h3>
+          <p class="facility-desc">${f.desc}</p>
+        </div>`).join("");
+    }
+
+    function populateTestimonials() {
+      $id("testimonials-list").innerHTML = COMPANY.testimonials.map(t => `
+        <div class="testimonial-card ${t.highlight ? "testimonial-highlight" : ""}">
+          <span class="testimonial-quote-mark">"</span>
+          <p class="testimonial-text">${t.quote}</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">${t.name[0]}</div>
+            <div>
+              <div class="author-name">${t.name}</div>
+              <div class="author-role">${t.role}</div>
+            </div>
+          </div>
+        </div>`).join("");
+    }
+
+    function populateBlog() {
+      $id("blog-grid").innerHTML = COMPANY.blog.map(p => `
+        <article class="blog-card">
+          <div class="blog-img-wrap">
+            <img src="${p.img}" alt="${p.title}" loading="lazy" />
+            <span class="blog-tag">${p.tag}</span>
+          </div>
+          <div class="blog-body">
+            <div class="blog-meta">
+              <span><i class="fa-regular fa-calendar"></i> ${p.date}</span>
+              <span><i class="fa-regular fa-clock"></i> ${p.readTime}</span>
+            </div>
+            <h3 class="blog-title">${p.title}</h3>
+            <p class="blog-excerpt">${p.excerpt}</p>
+            <div class="blog-footer">
+              <div class="blog-author">
+                <div class="blog-author-avatar">${p.author[0]}</div>
+                <span>${p.author}</span>
+              </div>
+              <a href="#" class="blog-read-more">Read More →</a>
+            </div>
+          </div>
+        </article>`).join("");
+    }
+
+    function populateFooter() {
+      $id("footer-logo").textContent = COMPANY.name + ".";
+      $id("footer-email").textContent = COMPANY.email;
+      $id("footer-address").textContent = COMPANY.address;
+      let cols = "";
+      for (const [heading, items] of Object.entries(COMPANY.footerLinks)) {
+        cols += `<div><h4 class="footer-col-heading">${heading}</h4><ul class="footer-col-list">${items.map(i => `<li><a href="#">${i}</a></li>`).join("")}</ul></div>`;
+      }
+      $id("footer-cols").innerHTML = cols;
+      $id("footer-copyright").textContent = `All rights reserved to ${COMPANY.copyright}`;
+    }
+
+    function initMobileMenu() {
+      const btn = $id("mobile-menu-btn"), drawer = $id("mobile-drawer"),
+            overlay = $id("mobile-overlay"), closeBtn = $id("mobile-close-btn");
+      const open  = () => { drawer.classList.add("open");    overlay.classList.add("open");    document.body.style.overflow = "hidden"; };
+      const close = () => { drawer.classList.remove("open"); overlay.classList.remove("open"); document.body.style.overflow = ""; };
+      btn.addEventListener("click", open);
+      closeBtn.addEventListener("click", close);
+      overlay.addEventListener("click", close);
+      drawer.querySelectorAll(".nav-link").forEach(l => l.addEventListener("click", close));
+    }
+
+    function initContactForm() {
+      $id("contact-form").addEventListener("submit", e => {
+        e.preventDefault();
+        const btn = $id("contact-submit");
+        btn.textContent = "Message Sent ✓";
+        btn.style.background = "#16a34a";
+        btn.disabled = true;
+        setTimeout(() => { btn.textContent = "Send Message →"; btn.style.background = ""; btn.disabled = false; e.target.reset(); }, 3500);
+      });
+    }
+
+    function initStoreTabs() {
+      document.querySelectorAll(".store-tag").forEach(tag => {
+        tag.addEventListener("click", function() {
+          document.querySelectorAll(".store-tag").forEach(t => t.classList.remove("active"));
+          this.classList.add("active");
+        });
+      });
+    }
+  </script>
+  <style>
+    :root {
+      --color-primary: #1A4F9C;
+      --color-accent:  #38BDF8;
+      --color-light:   #F0F6FF;
+      --color-card:    #E0EDFF;
+      font-family: 'Poppins', sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { background: var(--color-light); color: #1a1a1a; overflow-x: hidden; }
+    h1, h2, h3 { font-family: 'Inter Tight', sans-serif; }
+
+    /* ── Nav ── */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(240,246,255,0.93); backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(26,79,156,0.12);
+      display: flex; align-items: center; justify-content: space-between; padding: 0.9rem 5%;
+    }
+    #nav-logo {
+      font-family: 'Inter Tight', sans-serif; font-size: 1.35rem; font-weight: 700;
+      color: var(--color-primary); display: flex; align-items: center; gap: 0.4rem; flex-shrink: 0;
+    }
+    .logo-icon i { font-size: 1.4rem; color: var(--color-primary); }
+    #nav-links { display: flex; gap: 1.75rem; }
+    .nav-link { font-size: 0.875rem; font-weight: 500; color: #444; text-decoration: none; transition: color 0.2s; }
+    .nav-link:hover { color: var(--color-primary); }
+    .nav-cta { display: flex; gap: 8px; align-items: center; flex-shrink: 0; }
+    .btn-visit {
+      background: var(--color-primary); color: #fff; border: none;
+      padding: 0.55rem 1.4rem; border-radius: 999px; font-size: 0.875rem; font-weight: 600;
+      cursor: pointer; transition: opacity 0.2s;
+    }
+    .btn-visit:hover { opacity: 0.85; }
+    .btn-contact {
+      background: transparent; color: var(--color-primary); border: 2px solid var(--color-primary);
+      padding: 0.5rem 1.3rem; border-radius: 999px; font-size: 0.875rem; font-weight: 600;
+      cursor: pointer; transition: all 0.2s;
+    }
+    .btn-contact:hover { background: var(--color-primary); color: #fff; }
+
+    /* Mobile menu */
+    #mobile-menu-btn {
+      display: none; background: none; border: none; cursor: pointer;
+      color: var(--color-primary); font-size: 1.5rem; padding: 0.25rem;
+    }
+    #mobile-overlay {
+      display: none; position: fixed; inset: 0; background: rgba(10,30,70,0.5);
+      z-index: 200; opacity: 0; transition: opacity 0.3s;
+    }
+    #mobile-overlay.open { display: block; opacity: 1; }
+    #mobile-drawer {
+      position: fixed; top: 0; right: -100%; width: min(320px,85vw); height: 100%;
+      background: #fff; z-index: 201; padding: 2rem 1.75rem;
+      transition: right 0.35s cubic-bezier(0.4,0,0.2,1);
+      display: flex; flex-direction: column; gap: 1rem;
+      box-shadow: -4px 0 30px rgba(26,79,156,0.2);
+    }
+    #mobile-drawer.open { right: 0; }
+    .mobile-drawer-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem; }
+    .mobile-drawer-logo {
+      font-family: 'Inter Tight', sans-serif; font-size: 1.2rem; font-weight: 700;
+      color: var(--color-primary); display: flex; align-items: center; gap: 0.4rem;
+    }
+    #mobile-close-btn { background: none; border: none; cursor: pointer; font-size: 1.4rem; color: #666; padding: 0.25rem; }
+    #mobile-nav-links { display: flex; flex-direction: column; gap: 0.25rem; }
+    #mobile-nav-links .nav-link { display: block; padding: 0.75rem 0.5rem; border-bottom: 1px solid rgba(26,79,156,0.08); font-size: 0.95rem; }
+    .mobile-drawer-actions { margin-top: auto; display: flex; flex-direction: column; gap: 0.75rem; }
+    .mobile-drawer-actions .btn-visit,
+    .mobile-drawer-actions .btn-contact { width: 100%; text-align: center; padding: 0.75rem; }
+
+    /* ── Hero ── */
+    #hero {
+      position: relative; min-height: 88vh;
+      background: linear-gradient(135deg, var(--color-primary) 0%, #0D2B6B 100%);
+      display: flex; align-items: center; overflow: hidden;
+    }
+    #hero::before {
+      content: ""; position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 70% 50%, rgba(56,189,248,0.15) 0%, transparent 60%);
+    }
+    .hero-content { position: relative; z-index: 2; width: 55%; padding: 3rem 5%; }
+    #hero-headline {
+      font-family: 'Inter Tight', sans-serif; font-size: clamp(2.4rem,5vw,4.5rem);
+      font-weight: 900; line-height: 1.1; color: #fff; margin-bottom: 1.25rem;
+    }
+    #hero-sub { color: rgba(255,255,255,0.75); font-size: 0.95rem; max-width: 340px; line-height: 1.7; }
+    .hero-btns { display: flex; gap: 1rem; margin-top: 2.5rem; align-items: center; flex-wrap: wrap; }
+    .btn-hero-primary {
+      background: var(--color-accent); color: #0D2B6B; border: none;
+      padding: 0.75rem 2rem; border-radius: 999px; font-weight: 700; font-size: 0.95rem;
+      cursor: pointer; transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .btn-hero-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(56,189,248,0.45); }
+    .btn-hero-outline {
+      background: rgba(255,255,255,0.12); color: #fff;
+      border: 1px solid rgba(255,255,255,0.35); padding: 0.72rem 1.8rem;
+      border-radius: 999px; font-size: 0.9rem; font-weight: 600; cursor: pointer;
+      backdrop-filter: blur(6px); transition: background 0.2s;
+    }
+    .btn-hero-outline:hover { background: rgba(255,255,255,0.22); }
+    .hero-img-panel { position: absolute; right: 0; top: 0; bottom: 0; width: 50%; overflow: hidden; }
+    .hero-img-panel img {
+      width: 100%; height: 100%; object-fit: cover; opacity: 0.65;
+      mask-image: linear-gradient(to right, transparent 0%, black 30%);
+      -webkit-mask-image: linear-gradient(to right, transparent 0%, black 30%);
+    }
+    .hero-badge {
+      position: absolute; bottom: 2.5rem; right: 5%;
+      background: rgba(255,255,255,0.13); backdrop-filter: blur(12px);
+      border: 1px solid rgba(255,255,255,0.2); border-radius: 1rem;
+      padding: 1rem 1.4rem; color: #fff; font-size: 0.8rem;
+      display: flex; align-items: center; gap: 0.75rem; z-index: 3;
+    }
+    .hero-badge-icon i { font-size: 1.6rem; color: var(--color-accent); }
+
+    /* ── Section commons ── */
+    section { padding: 5rem 5%; }
+    .section-label {
+      text-transform: uppercase; letter-spacing: 0.15em;
+      font-size: 0.7rem; font-weight: 700; color: var(--color-primary); margin-bottom: 0.75rem;
+    }
+    .section-title {
+      font-family: 'Inter Tight', sans-serif;
+      font-size: clamp(1.8rem,3.5vw,3rem); font-weight: 700; line-height: 1.2; color: #1a1a1a;
+    }
+
+    /* ── About ── */
+    #about { background: #fff; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+    .about-img-wrap { border-radius: 1.5rem; overflow: hidden; aspect-ratio: 4/3; box-shadow: 0 20px 60px rgba(26,79,156,0.15); }
+    .about-img-wrap img { width: 100%; height: 100%; object-fit: cover; }
+    #about-title { font-family: 'Inter Tight', sans-serif; font-size: clamp(1.4rem,2.5vw,2.2rem); line-height: 1.35; color: #1a1a1a; margin: 0.75rem 0 1.5rem; }
+    .about-product-card {
+      display: flex; align-items: center; gap: 1rem; background: var(--color-card);
+      border-radius: 1rem; padding: 1rem 1.25rem; font-size: 0.85rem; color: #555; line-height: 1.6; max-width: 400px;
+    }
+    .about-product-icon { font-size: 2.5rem; flex-shrink: 0; color: var(--color-primary); }
+    .about-product-icon i { font-size: 2.2rem; color: var(--color-primary); }
+
+    /* ── Services ── */
+    #services { background: var(--color-light); text-align: center; }
+    #services-list { display: grid; grid-template-columns: repeat(4,1fr); gap: 1.5rem; margin-top: 3rem; }
+    .service-card {
+      background: #fff; border-radius: 1.5rem; padding: 2rem 1.5rem; text-align: left;
+      box-shadow: 0 4px 20px rgba(26,79,156,0.07); transition: transform 0.25s, box-shadow 0.25s;
+    }
+    .service-card:hover { transform: translateY(-6px); box-shadow: 0 16px 40px rgba(26,79,156,0.15); }
+    .service-icon { font-size: 2rem; margin-bottom: 1rem; }
+    .service-icon i { font-size: 2rem; color: var(--color-primary); }
+    .service-title { font-weight: 600; font-size: 1rem; margin-bottom: 1rem; line-height: 1.4; }
+    .service-cta { color: var(--color-primary); font-size: 0.8rem; font-weight: 700; text-decoration: none; letter-spacing: 0.03em; }
+    .service-cta:hover { text-decoration: underline; }
+
+    /* ── Mission ── */
+    #mission { background: #fff; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+    .mission-headline { font-family: 'Inter Tight', sans-serif; font-size: clamp(2rem,4vw,3.5rem); font-weight: 900; line-height: 1.1; margin-bottom: 2rem; }
+    .mission-pill { display: inline-block; background: var(--color-accent); border-radius: 999px; padding: 0.1em 0.5em; font-size: 0.75em; vertical-align: middle; color: #0D2B6B; }
+    .mission-pill i { font-size: 0.7em; }
+    #mission-list { display: flex; flex-direction: column; gap: 1rem; }
+    .mission-item { display: flex; align-items: center; gap: 1rem; padding: 1rem 1.25rem; border-radius: 1rem; background: var(--color-card); font-size: 0.9rem; color: #333; }
+    .mission-icon { font-size: 1.5rem; flex-shrink: 0; }
+    .mission-icon i { font-size: 1.4rem; color: var(--color-primary); }
+    .mission-img { border-radius: 1.5rem; overflow: hidden; aspect-ratio: 3/4; box-shadow: 0 20px 60px rgba(26,79,156,0.12); }
+    .mission-img img { width: 100%; height: 100%; object-fit: cover; }
+
+    /* ── Store / Rooms ── */
+    #store { background: var(--color-light); }
+    .store-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 2.5rem; flex-wrap: wrap; gap: 1rem; }
+    .store-tags { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+    .store-tag { font-size: 0.75rem; font-weight: 600; color: #666; padding: 0.25rem 0.75rem; border-radius: 999px; border: 1px solid #c7d9f5; background: #fff; cursor: pointer; transition: all 0.2s; }
+    .store-tag.active { background: var(--color-primary); color: #fff; border-color: var(--color-primary); }
+    #store-products { display: grid; grid-template-columns: repeat(4,1fr); gap: 1.25rem; }
+    .product-card { border-radius: 1.5rem; padding: 1.5rem 1.25rem; display: flex; flex-direction: column; gap: 1rem; }
+    .product-pill-wrap {
+      width: 60px; height: 60px; border-radius: 50%; background: rgba(255,255,255,0.7);
+      display: flex; align-items: center; justify-content: center; font-size: 1.75rem; margin-bottom: 0.5rem;
+    }
+    .product-pill-wrap i { font-size: 1.4rem; color: var(--color-primary); }
+    .product-name { font-weight: 700; font-size: 1rem; color: #1a1a1a; }
+    .product-sub { font-weight: 400; color: #666; font-size: 0.85rem; }
+    .product-footer { display: flex; align-items: center; justify-content: space-between; }
+    .product-price { font-size: 0.85rem; color: #444; font-weight: 600; }
+    .product-btn { width: 30px; height: 30px; border-radius: 50%; background: var(--color-primary); color: #fff; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: opacity 0.2s; }
+    .product-btn:hover { opacity: 0.8; }
+
+    /* ── CTA Banner ── */
+    #cta-banner {
+      background: linear-gradient(135deg, var(--color-primary) 0%, #0D2B6B 100%);
+      color: #fff; display: grid; grid-template-columns: 1fr 1fr;
+      align-items: center; gap: 3rem; position: relative; overflow: hidden;
+    }
+    #cta-banner::before { content: ""; position: absolute; inset: 0; background: url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=1200&q=80') center/cover; opacity: 0.08; }
+    #cta-banner::after  { content: ""; position: absolute; inset: 0; background: radial-gradient(ellipse at 80% 50%, rgba(56,189,248,0.12) 0%, transparent 60%); }
+    .cta-left, .cta-right { position: relative; z-index: 2; }
+    .cta-right h2 { font-family: 'Inter Tight', sans-serif; font-size: clamp(1.6rem,3vw,2.8rem); font-weight: 700; line-height: 1.2; margin-bottom: 2rem; }
+    #stats-list { display: flex; gap: 2.5rem; flex-wrap: wrap; }
+    .stat-value { font-family: 'Inter Tight', sans-serif; font-size: 2.5rem; font-weight: 900; color: var(--color-accent); line-height: 1; }
+    .stat-label { font-size: 0.8rem; opacity: 0.7; margin-top: 0.25rem; }
+    .btn-appt {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: rgba(255,255,255,0.15); color: #fff; border: 1px solid rgba(255,255,255,0.3);
+      padding: 0.65rem 1.5rem; border-radius: 999px; font-size: 0.875rem; font-weight: 600;
+      cursor: pointer; backdrop-filter: blur(6px); text-decoration: none; transition: background 0.2s;
+    }
+    .btn-appt:hover { background: rgba(255,255,255,0.25); }
+    .health-care-badge {
+      display: inline-flex; align-items: center; gap: 0.75rem;
+      background: rgba(255,255,255,0.12); backdrop-filter: blur(8px);
+      border: 1px solid rgba(255,255,255,0.2); border-radius: 1rem; padding: 0.85rem 1.2rem; margin-top: 2rem; font-size: 0.85rem;
+    }
+    .badge-icon { width: 36px; height: 36px; border-radius: 50%; background: var(--color-accent); display: flex; align-items: center; justify-content: center; font-size: 1.1rem; flex-shrink: 0; color: #0D2B6B; }
+    .badge-icon i { font-size: 1.1rem; color: #0D2B6B; }
+
+    /* ── Facilities ── */
+    #facilities { background: #fff; }
+    .section-header { display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 3rem; flex-wrap: wrap; gap: 1rem; }
+    #facilities-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.75rem; }
+    .facility-card {
+      background: var(--color-light); border-radius: 1.5rem; padding: 2rem 1.75rem;
+      border: 1px solid rgba(26,79,156,0.08); transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
+    }
+    .facility-card:hover { transform: translateY(-5px); box-shadow: 0 16px 40px rgba(26,79,156,0.12); border-color: var(--color-accent); }
+    .facility-icon-wrap {
+      width: 52px; height: 52px; border-radius: 14px; background: var(--color-card);
+      display: flex; align-items: center; justify-content: center; font-size: 1.4rem; color: var(--color-primary); margin-bottom: 1.25rem;
+    }
+    .facility-icon-wrap i { font-size: 1.3rem; color: var(--color-primary); }
+    .facility-title { font-family: 'Inter Tight', sans-serif; font-weight: 700; font-size: 1.05rem; margin-bottom: 0.6rem; color: #1a1a1a; }
+    .facility-desc { font-size: 0.84rem; color: #555; line-height: 1.7; }
+
+    /* ── Testimonials ── */
+    #testimonials { background: var(--color-light); }
+    .testimonials-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 2.5rem; flex-wrap: wrap; gap: 1rem; }
+    #testimonials-list { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; }
+    .testimonial-card { background: #fff; border-radius: 1.5rem; padding: 1.75rem; display: flex; flex-direction: column; gap: 1rem; box-shadow: 0 4px 20px rgba(26,79,156,0.06); }
+    .testimonial-highlight { background: var(--color-primary); }
+    .testimonial-quote-mark { font-family: 'Inter Tight', sans-serif; font-size: 3rem; line-height: 1; color: var(--color-primary); opacity: 0.3; }
+    .testimonial-highlight .testimonial-quote-mark { color: var(--color-accent); opacity: 0.6; }
+    .testimonial-text { font-size: 0.875rem; color: #444; line-height: 1.7; }
+    .testimonial-highlight .testimonial-text { color: rgba(255,255,255,0.85); }
+    .testimonial-author { display: flex; align-items: center; gap: 0.75rem; margin-top: auto; }
+    .author-avatar { width: 36px; height: 36px; border-radius: 50%; background: var(--color-primary); color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.9rem; flex-shrink: 0; }
+    .testimonial-highlight .author-avatar { background: var(--color-accent); color: #0D2B6B; }
+    .author-name { font-weight: 700; font-size: 0.85rem; }
+    .testimonial-highlight .author-name { color: #fff; }
+    .author-role { font-size: 0.75rem; color: #777; }
+    .testimonial-highlight .author-role { color: rgba(255,255,255,0.6); }
+    .btn-see-all { background: var(--color-accent); color: #0D2B6B; border: none; padding: 0.55rem 1.25rem; border-radius: 999px; font-size: 0.8rem; font-weight: 700; cursor: pointer; }
+    .btn-register { background: var(--color-primary); color: #fff; border: none; padding: 0.6rem 1.4rem; border-radius: 999px; font-size: 0.85rem; font-weight: 600; cursor: pointer; transition: opacity 0.2s; }
+    .btn-register:hover { opacity: 0.85; }
+
+    /* ── Blog ── */
+    #blog { background: #fff; }
+    #blog-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.75rem; }
+    .blog-card {
+      background: var(--color-light); border-radius: 1.5rem; overflow: hidden;
+      border: 1px solid rgba(26,79,156,0.08); transition: transform 0.25s, box-shadow 0.25s;
+      display: flex; flex-direction: column;
+    }
+    .blog-card:hover { transform: translateY(-5px); box-shadow: 0 16px 40px rgba(26,79,156,0.12); }
+    .blog-img-wrap { position: relative; aspect-ratio: 16/9; overflow: hidden; flex-shrink: 0; }
+    .blog-img-wrap img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s; }
+    .blog-card:hover .blog-img-wrap img { transform: scale(1.04); }
+    .blog-tag { position: absolute; top: 1rem; left: 1rem; background: var(--color-primary); color: #fff; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; padding: 0.25rem 0.7rem; border-radius: 999px; }
+    .blog-body { padding: 1.5rem; display: flex; flex-direction: column; gap: 0.75rem; flex: 1; }
+    .blog-meta { display: flex; gap: 1rem; font-size: 0.75rem; color: #777; flex-wrap: wrap; }
+    .blog-meta i { margin-right: 0.3rem; color: var(--color-primary); }
+    .blog-title { font-family: 'Inter Tight', sans-serif; font-weight: 700; font-size: 1rem; line-height: 1.4; color: #1a1a1a; }
+    .blog-excerpt { font-size: 0.82rem; color: #555; line-height: 1.7; flex: 1; }
+    .blog-footer { display: flex; align-items: center; justify-content: space-between; margin-top: 0.5rem; }
+    .blog-author { display: flex; align-items: center; gap: 0.5rem; font-size: 0.8rem; font-weight: 600; color: #333; }
+    .blog-author-avatar { width: 28px; height: 28px; border-radius: 50%; background: var(--color-primary); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 0.75rem; font-weight: 700; }
+    .blog-read-more { font-size: 0.8rem; font-weight: 700; color: var(--color-primary); text-decoration: none; }
+    .blog-read-more:hover { text-decoration: underline; }
+
+    /* ── Contact Us ── */
+    #contact-us { background: var(--color-light); display: grid; grid-template-columns: 1fr 1.3fr; gap: 4rem; align-items: start; }
+    .contact-info h2 { font-family: 'Inter Tight', sans-serif; font-size: clamp(1.8rem,3vw,2.8rem); font-weight: 700; line-height: 1.2; margin-bottom: 1rem; }
+    .contact-info > p { font-size: 0.9rem; color: #555; line-height: 1.8; margin-bottom: 2rem; max-width: 380px; }
+    .contact-details { display: flex; flex-direction: column; gap: 1rem; }
+    .contact-detail-item { display: flex; align-items: center; gap: 1rem; background: #fff; border-radius: 1rem; padding: 1rem 1.25rem; box-shadow: 0 2px 12px rgba(26,79,156,0.07); }
+    .contact-detail-icon { width: 42px; height: 42px; border-radius: 50%; background: var(--color-card); display: flex; align-items: center; justify-content: center; color: var(--color-primary); flex-shrink: 0; }
+    .contact-detail-icon i { font-size: 1rem; color: var(--color-primary); }
+    .contact-detail-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: #999; margin-bottom: 0.15rem; }
+    .contact-detail-value { font-size: 0.9rem; font-weight: 600; color: #1a1a1a; }
+    .contact-map-stub {
+      margin-top: 1.75rem; border-radius: 1.25rem; overflow: hidden;
+      height: 160px; background: var(--color-card); display: flex; align-items: center; justify-content: center;
+      font-size: 0.85rem; color: #666; border: 1px solid rgba(26,79,156,0.1);
+    }
+    .contact-form-wrap { background: #fff; border-radius: 2rem; padding: 2.5rem; box-shadow: 0 8px 40px rgba(26,79,156,0.1); }
+    .contact-form-wrap h3 { font-family: 'Inter Tight', sans-serif; font-size: 1.4rem; font-weight: 700; margin-bottom: 0.4rem; }
+    .contact-form-wrap > p { font-size: 0.85rem; color: #666; margin-bottom: 1.75rem; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .form-group { display: flex; flex-direction: column; gap: 0.4rem; margin-bottom: 1.1rem; }
+    .form-group label { font-size: 0.78rem; font-weight: 600; color: #333; }
+    .form-group input, .form-group select, .form-group textarea {
+      border: 1.5px solid #d1e3f8; border-radius: 0.75rem; padding: 0.7rem 1rem;
+      font-size: 0.875rem; font-family: inherit; color: #1a1a1a; background: var(--color-light);
+      transition: border-color 0.2s, box-shadow 0.2s; outline: none;
+    }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--color-primary); box-shadow: 0 0 0 3px rgba(26,79,156,0.1); }
+    .form-group textarea { resize: vertical; min-height: 110px; }
+    .form-group select {
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%231A4F9C' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat; background-position: right 1rem center; padding-right: 2.5rem;
+    }
+    #contact-submit {
+      width: 100%; padding: 0.85rem; background: var(--color-primary); color: #fff;
+      border: none; border-radius: 999px; font-size: 0.95rem; font-weight: 700;
+      cursor: pointer; transition: opacity 0.2s, background 0.3s; margin-top: 0.5rem;
+    }
+    #contact-submit:hover:not(:disabled) { opacity: 0.88; }
+    #contact-submit:disabled { cursor: default; }
+    .form-privacy { font-size: 0.72rem; color: #999; text-align: center; margin-top: 0.75rem; }
+    .form-privacy a { color: var(--color-primary); }
+
+    /* ── Footer ── */
+    footer { background: var(--color-primary); color: rgba(255,255,255,0.85); padding: 4rem 5% 1.5rem; }
+    .footer-grid { display: grid; grid-template-columns: 1.2fr repeat(3,1fr) 1.3fr; gap: 2rem; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 2.5rem; margin-bottom: 1.5rem; }
+    #footer-logo { font-family: 'Inter Tight', sans-serif; font-size: 1.5rem; font-weight: 700; color: #fff; margin-bottom: 1rem; }
+    .footer-desc { font-size: 0.8rem; opacity: 0.6; line-height: 1.7; margin-bottom: 1rem; }
+    .footer-contact { font-size: 0.8rem; opacity: 0.7; line-height: 1.9; }
+    .footer-contact i { color: var(--color-accent); margin-right: 0.3rem; }
+    .footer-col-heading { font-weight: 700; font-size: 0.85rem; color: #fff; margin-bottom: 1rem; }
+    .footer-col-list { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+    .footer-col-list a { font-size: 0.8rem; color: rgba(255,255,255,0.6); text-decoration: none; transition: color 0.2s; }
+    .footer-col-list a:hover { color: var(--color-accent); }
+    .footer-cta-box h4 { font-family: 'Inter Tight', sans-serif; font-size: 1.1rem; color: #fff; margin-bottom: 0.75rem; line-height: 1.4; }
+    .footer-bottom { display: flex; align-items: center; justify-content: space-between; font-size: 0.75rem; opacity: 0.5; flex-wrap: wrap; gap: 0.75rem; }
+    .footer-socials { display: flex; gap: 1rem; }
+    .footer-socials a { color: rgba(255,255,255,0.6); text-decoration: none; font-size: 1rem; transition: color 0.2s; }
+    .footer-socials a:hover { color: var(--color-accent); }
+    .footer-bottom-links { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+    .footer-bottom-links a { color: rgba(255,255,255,0.5); text-decoration: none; font-size: 0.75rem; }
+
+    /* ── Scrollbar ── */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: var(--color-light); }
+    ::-webkit-scrollbar-thumb { background: var(--color-primary); border-radius: 3px; }
+
+    /* ── Animations ── */
+    @keyframes fadeUp { from { opacity:0; transform:translateY(30px); } to { opacity:1; transform:translateY(0); } }
+    section > * { animation: fadeUp 0.7s ease both; }
+
+    /* ═══════════════════ RESPONSIVE ═══════════════════ */
+    @media (max-width: 1200px) {
+      #facilities-grid { grid-template-columns: repeat(2,1fr); }
+    }
+    @media (max-width: 1024px) {
+      #services-list  { grid-template-columns: repeat(2,1fr); }
+      #store-products { grid-template-columns: repeat(2,1fr); }
+      #blog-grid      { grid-template-columns: repeat(2,1fr); }
+      .footer-grid    { grid-template-columns: 1fr 1fr; }
+      .footer-grid > div:first-child { grid-column: 1 / -1; }
+      .footer-grid > div:last-child  { grid-column: 1 / -1; }
+    }
+    @media (max-width: 900px) {
+      #about, #mission { grid-template-columns: 1fr; gap: 2.5rem; }
+      #cta-banner      { grid-template-columns: 1fr; gap: 2rem; }
+      #contact-us      { grid-template-columns: 1fr; gap: 2.5rem; }
+      .mission-img     { aspect-ratio: 16/9; }
+      .hero-content    { width: 70%; }
+      .form-row        { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 768px) {
+      #nav-links, .nav-cta { display: none; }
+      #mobile-menu-btn { display: block; }
+      .hero-content { width: 100%; padding: 3rem 5% 5rem; }
+      .hero-img-panel { display: none; }
+      .hero-badge { bottom: 1.5rem; right: 5%; left: 5%; }
+      section { padding: 3.5rem 5%; }
+      #services-list   { grid-template-columns: 1fr 1fr; gap: 1rem; }
+      #store-products  { grid-template-columns: 1fr 1fr; gap: 1rem; }
+      #facilities-grid { grid-template-columns: 1fr 1fr; }
+      #testimonials-list { grid-template-columns: 1fr; }
+      #blog-grid       { grid-template-columns: 1fr; }
+      .store-top       { flex-direction: column; align-items: flex-start; }
+      .section-header  { flex-direction: column; align-items: flex-start; }
+      .footer-grid     { grid-template-columns: 1fr 1fr; gap: 1.75rem; }
+      .footer-grid > div:first-child { grid-column: 1 / -1; }
+      .footer-grid > div:last-child  { grid-column: 1 / -1; }
+      #footer-cols     { display: contents; }
+      .footer-bottom   { flex-direction: column; align-items: flex-start; gap: 1rem; }
+    }
+    @media (max-width: 480px) {
+      #services-list   { grid-template-columns: 1fr; }
+      #store-products  { grid-template-columns: 1fr; }
+      #facilities-grid { grid-template-columns: 1fr; }
+      .hero-btns       { flex-direction: column; align-items: stretch; }
+      .btn-hero-primary, .btn-hero-outline { width: 100%; justify-content: center; }
+      #stats-list  { gap: 1.5rem; }
+      .stat-value  { font-size: 2rem; }
+      .testimonials-top { flex-direction: column; align-items: flex-start; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .footer-grid > div:first-child,
+      .footer-grid > div:last-child { grid-column: auto; }
+      .contact-form-wrap { padding: 1.5rem; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ═══ NAV ═══ -->
+  <nav>
+    <div id="nav-logo"></div>
+    <div id="nav-links"></div>
+    <div class="nav-cta">
+      <a href="#contact-us"><button class="btn-visit">Book a Visit.</button></a>
+      <a href="#contact-us"><button class="btn-contact">Contact Us.</button></a>
+    </div>
+    <button id="mobile-menu-btn" aria-label="Open menu"><i class="fa-solid fa-bars"></i></button>
+  </nav>
+
+  <div id="mobile-overlay"></div>
+  <div id="mobile-drawer" role="dialog" aria-modal="true" aria-label="Navigation menu">
+    <div class="mobile-drawer-header">
+      <div class="mobile-drawer-logo"><i class="fa-solid fa-heart-pulse"></i> Lydville Care</div>
+      <button id="mobile-close-btn" aria-label="Close menu"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <div id="mobile-nav-links"></div>
+    <div class="mobile-drawer-actions">
+      <a href="#contact-us"><button class="btn-visit">Book a Visit.</button></a>
+      <a href="#contact-us"><button class="btn-contact">Contact Us.</button></a>
+    </div>
+  </div>
+
+  <!-- ═══ HERO ═══ -->
+  <section id="hero" style="padding:0;">
+    <div class="hero-content">
+      <h1 id="hero-headline"></h1>
+      <p id="hero-sub"></p>
+      <div class="hero-btns">
+        <button class="btn-hero-primary" onclick="document.querySelector('#store').scrollIntoView({behavior:'smooth'})">View Living Options</button>
+        <button class="btn-hero-outline" onclick="document.querySelector('#contact-us').scrollIntoView({behavior:'smooth'})">Schedule a Tour →</button>
+      </div>
+    </div>
+    <div class="hero-img-panel">
+      <img src="https://images.unsplash.com/photo-1576765607924-3f7b8410a787?w=900&q=80" alt="Senior care" />
+    </div>
+    <div class="hero-badge">
+      <div class="hero-badge-icon"><i class="fa-solid fa-heart-pulse"></i></div>
+      <div>
+        <div style="font-weight:700;font-size:0.9rem;">Accredited Care Excellence</div>
+        <div style="opacity:0.7;font-size:0.75rem;">Nationally Recognised Senior Living Standard.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ ABOUT ═══ -->
+  <section id="about">
+    <div class="about-img-wrap">
+      <img src="https://images.unsplash.com/photo-1609220136736-443140cffec6?w=800&q=80" alt="Happy seniors" />
+    </div>
+    <div>
+      <div class="section-label">About Us</div>
+      <p id="about-title"></p>
+      <div class="about-product-card">
+        <span class="about-product-icon"><i class="fa-solid fa-hand-holding-heart"></i></span>
+        <span>We are more than a care facility — we are a family. Our trained professionals are committed to creating a warm, inclusive, and enriching environment addressing every resident's physical, emotional, and social wellbeing.</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ SERVICES ═══ -->
+  <section id="services">
+    <div class="section-label">Our Care Services</div>
+    <h2 class="section-title">Thoughtfully crafted for exceptional living</h2>
+    <div id="services-list"></div>
+  </section>
+
+  <!-- ═══ MISSION ═══ -->
+  <section id="mission">
+    <div>
+      <div class="section-label">Our Mission</div>
+      <h2 class="mission-headline">
+        Enriching <span class="mission-pill"><i class="fa-solid fa-heart"></i></span> every<br />life we touch
+      </h2>
+      <div id="mission-list"></div>
+    </div>
+    <div class="mission-img">
+      <img src="https://images.unsplash.com/photo-1582719508461-905c673771fd?w=700&q=80" alt="Care provider" />
+    </div>
+  </section>
+
+  <!-- ═══ LIVING OPTIONS ═══ -->
+  <section id="store">
+    <div class="store-top">
+      <div>
+        <div class="store-tags">
+          <span class="store-tag active">All Options</span>
+          <span class="store-tag">Independent Living</span>
+          <span class="store-tag">Assisted Living</span>
+          <span class="store-tag">Memory Care</span>
+        </div>
+      </div>
+      <div style="display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap;">
+        <h2 class="section-title" style="font-size:2rem;">Living options</h2>
+        <button class="btn-register" onclick="document.querySelector('#contact-us').scrollIntoView({behavior:'smooth'})">Schedule a Tour →</button>
+      </div>
+    </div>
+    <div id="store-products"></div>
+  </section>
+
+  <!-- ═══ CTA BANNER ═══ -->
+  <section id="cta-banner">
+    <div class="cta-left">
+      <p style="opacity:0.75;font-size:0.85rem;line-height:1.7;max-width:300px;margin-bottom:1.5rem;">
+        Our mission is to deliver personalised care that meets the physical, medical, emotional, spiritual, and social needs of each resident — fostering healthy living, purpose, and happiness.
+      </p>
+      <a href="#contact-us" class="btn-appt">Schedule a Tour →</a>
+      <div id="stats-list" style="margin-top:2.5rem;"></div>
+    </div>
+    <div class="cta-right">
+      <h2>Helping every resident live their best life.</h2>
+      <div class="health-care-badge">
+        <div class="badge-icon"><i class="fa-solid fa-house-medical"></i></div>
+        <div>
+          <div style="font-weight:700;font-size:0.85rem;">Explore Our Community</div>
+          <div style="opacity:0.7;font-size:0.75rem;">Take a Virtual Tour →</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ FACILITIES ═══ -->
+  <section id="facilities">
+    <div class="section-header">
+      <div>
+        <div class="section-label">Our Facilities</div>
+        <h2 class="section-title">World-class amenities, right at home</h2>
+      </div>
+      <button class="btn-register" onclick="document.querySelector('#contact-us').scrollIntoView({behavior:'smooth'})">Book a Tour →</button>
+    </div>
+    <div id="facilities-grid"></div>
+  </section>
+
+  <!-- ═══ TESTIMONIALS ═══ -->
+  <section id="testimonials">
+    <div class="testimonials-top">
+      <div>
+        <div class="section-label">Families & Residents</div>
+        <h2 class="section-title">What our community is saying</h2>
+      </div>
+      <button class="btn-see-all">See All →</button>
+    </div>
+    <div id="testimonials-list"></div>
+  </section>
+
+  <!-- ═══ BLOG ═══ -->
+  <section id="blog">
+    <div class="section-header">
+      <div>
+        <div class="section-label">News & Insights</div>
+        <h2 class="section-title">From our community</h2>
+      </div>
+      <button class="btn-register">View All Articles →</button>
+    </div>
+    <div id="blog-grid"></div>
+  </section>
+
+  <!-- ═══ CONTACT US ═══ -->
+  <section id="contact-us">
+    <!-- Left: info -->
+    <div class="contact-info">
+      <div class="section-label">Get In Touch</div>
+      <h2>We'd love to hear from you.</h2>
+      <p>Whether you're ready to book a tour, have questions about our care options, or simply want to learn more about life at Lydville Care — our friendly team is here to help.</p>
+      <div class="contact-details">
+        <div class="contact-detail-item">
+          <div class="contact-detail-icon"><i class="fa-solid fa-phone"></i></div>
+          <div>
+            <div class="contact-detail-label">Phone</div>
+            <div class="contact-detail-value">To be announced</div>
+          </div>
+        </div>
+        <div class="contact-detail-item">
+          <div class="contact-detail-icon"><i class="fa-solid fa-envelope"></i></div>
+          <div>
+            <div class="contact-detail-label">Email</div>
+            <div class="contact-detail-value">To be announced</div>
+          </div>
+        </div>
+        <div class="contact-detail-item">
+          <div class="contact-detail-icon"><i class="fa-solid fa-location-dot"></i></div>
+          <div>
+            <div class="contact-detail-label">Address</div>
+            <div class="contact-detail-value">Isheri Brooks Estate, beside World Filling Station, Kara Isheri, Ogun State</div>
+          </div>
+        </div>
+        <div class="contact-detail-item">
+          <div class="contact-detail-icon"><i class="fa-solid fa-clock"></i></div>
+          <div>
+            <div class="contact-detail-label">Office Hours</div>
+            <div class="contact-detail-value">Mon – Fri: 8:00 AM – 6:00 PM</div>
+          </div>
+        </div>
+      </div>
+      <div class="contact-map-stub">
+        <i class="fa-solid fa-map-pin" style="color:var(--color-primary);margin-right:0.5rem;font-size:1.1rem;"></i>
+        <span>Isheri Brooks Estate, Kara Isheri, Ogun State</span>
+      </div>
+    </div>
+
+    <!-- Right: form -->
+    <div class="contact-form-wrap">
+      <h3>Send us a message</h3>
+      <p>Fill in the form and a member of our team will be in touch within one business day.</p>
+      <form id="contact-form" novalidate>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="cf-fname">First Name *</label>
+            <input id="cf-fname" type="text" placeholder="Jane" required />
+          </div>
+          <div class="form-group">
+            <label for="cf-lname">Last Name *</label>
+            <input id="cf-lname" type="text" placeholder="Doe" required />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="cf-email">Email Address *</label>
+            <input id="cf-email" type="email" placeholder="jane@example.com" required />
+          </div>
+          <div class="form-group">
+            <label for="cf-phone">Phone Number</label>
+            <input id="cf-phone" type="tel" placeholder="+1 (000) 000-0000" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="cf-interest">I'm interested in…</label>
+          <select id="cf-interest">
+            <option value="">Select a care type</option>
+            <option>Independent Living</option>
+            <option>Assisted Living</option>
+            <option>Memory Care</option>
+            <option>Respite / Short-Term Care</option>
+            <option>General Enquiry</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="cf-message">Your Message *</label>
+          <textarea id="cf-message" placeholder="Tell us a little about your situation or any questions you have…" required></textarea>
+        </div>
+        <button type="submit" id="contact-submit">Send Message →</button>
+        <p class="form-privacy">By submitting this form you agree to our <a href="#">Privacy Policy</a>. We never share your details.</p>
+      </form>
+    </div>
+  </section>
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer>
+    <div class="footer-grid">
+      <div>
+        <div id="footer-logo"></div>
+        <p class="footer-desc">A warm, nurturing home where every senior is celebrated, supported, and empowered to live life to the fullest — with dignity and grace.</p>
+        <div class="footer-contact">
+          <div><i class="fa-solid fa-envelope"></i> <span id="footer-email"></span></div>
+          <div><i class="fa-solid fa-location-dot"></i> <span id="footer-address"></span></div>
+        </div>
+      </div>
+      <div id="footer-cols" style="display:contents;"></div>
+      <div class="footer-cta-box">
+        <h4>Begin your loved one's journey to a joyful home.</h4>
+        <p class="footer-desc">Join a thriving community of seniors living with purpose, connection, and expert care every day.</p>
+        <button class="btn-register" style="margin-top:0.5rem;" onclick="document.querySelector('#contact-us').scrollIntoView({behavior:'smooth'})">Schedule a Tour →</button>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span id="footer-copyright"></span>
+      <div class="footer-socials">
+        <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="#" aria-label="X / Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+      </div>
+      <div class="footer-bottom-links">
+        <a href="#">Sitemap</a>
+        <a href="#">Terms of service</a>
+        <a href="#">Privacy policy</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

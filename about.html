@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us — Lydville Care & Elders' Home</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    :root {
+      --primary: #1A4F9C;
+      --accent:  #38BDF8;
+      --light:   #F0F6FF;
+      --card:    #E0EDFF;
+      --dark:    #0D2B6B;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Poppins', sans-serif; background: var(--light); color: #1a1a1a; overflow-x: hidden; }
+    h1, h2, h3, h4 { font-family: 'Inter Tight', sans-serif; }
+    button {font-family: 'Poppins', sans-serif !important;}
+    a { text-decoration: none; }
+    img { display: block; max-width: 100%; }
+
+    /* ─── NAV ─── */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(240,246,255,0.93); backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(26,79,156,0.12);
+      display: flex; align-items: center; justify-content: space-between; padding: 0.9rem 5%;
+    }
+    .nav-logo {
+      font-family: 'Inter Tight', sans-serif; font-size: 1.3rem; font-weight: 700;
+      color: var(--primary); display: flex; align-items: center; gap: 0.4rem; flex-shrink: 0;
+    }
+    .nav-logo i { font-size: 1.3rem; color: var(--primary); }
+    .nav-links { display: flex; gap: 1.75rem; }
+    .nav-link { font-size: 0.875rem; font-weight: 500; color: #444; transition: color 0.2s; }
+    .nav-link:hover, .nav-link.active { color: var(--primary); }
+    .nav-cta { display: flex; gap: 8px; flex-shrink: 0; }
+    .btn-primary {
+      background: var(--primary); color: #fff; border: none;
+      padding: 0.55rem 1.4rem; border-radius: 999px; font-size: 0.875rem; font-weight: 600;
+      cursor: pointer; transition: opacity 0.2s;
+    }
+    .btn-primary:hover { opacity: 0.85; }
+    .btn-outline {
+      background: transparent; color: var(--primary); border: 2px solid var(--primary);
+      padding: 0.5rem 1.3rem; border-radius: 999px; font-size: 0.875rem; font-weight: 600;
+      cursor: pointer; transition: all 0.2s;
+    }
+    .btn-outline:hover { background: var(--primary); color: #fff; }
+    #mob-btn {
+      display: none; background: none; border: none; cursor: pointer;
+      color: var(--primary); font-size: 1.5rem; padding: 0.25rem;
+    }
+
+    /* Mobile drawer */
+    #mob-overlay {
+      display: none; position: fixed; inset: 0; background: rgba(10,30,70,0.5);
+      z-index: 200; opacity: 0; transition: opacity 0.3s;
+    }
+    #mob-overlay.open { display: block; opacity: 1; }
+    #mob-drawer {
+      position: fixed; top: 0; right: -100%; width: min(320px,85vw); height: 100%;
+      background: #fff; z-index: 201; padding: 2rem 1.75rem;
+      transition: right 0.35s cubic-bezier(0.4,0,0.2,1);
+      display: flex; flex-direction: column; gap: 1rem;
+      box-shadow: -4px 0 30px rgba(26,79,156,0.2);
+    }
+    #mob-drawer.open { right: 0; }
+    .mob-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem; }
+    .mob-logo { font-family: 'Inter Tight', sans-serif; font-size: 1.15rem; font-weight: 700; color: var(--primary); display: flex; align-items: center; gap: 0.4rem; }
+    #mob-close { background: none; border: none; cursor: pointer; font-size: 1.4rem; color: #666; }
+    #mob-links { display: flex; flex-direction: column; gap: 0.25rem; }
+    #mob-links .nav-link { display: block; padding: 0.75rem 0.5rem; border-bottom: 1px solid rgba(26,79,156,0.08); font-size: 0.95rem; }
+    .mob-actions { margin-top: auto; display: flex; flex-direction: column; gap: 0.75rem; }
+    .mob-actions .btn-primary,
+    .mob-actions .btn-outline { width: 100%; text-align: center; padding: 0.75rem; }
+
+    /* ─── HERO BANNER ─── */
+    .page-hero {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--dark) 100%);
+      padding: 5rem 5% 4rem; position: relative; overflow: hidden;
+    }
+    .page-hero::before {
+      content: ""; position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 70% 50%, rgba(56,189,248,0.15) 0%, transparent 60%);
+    }
+    .page-hero::after {
+      content: ""; position: absolute; inset: 0;
+      background: url('https://images.unsplash.com/photo-1576765607924-3f7b8410a787?w=1400&q=80') center/cover;
+      opacity: 0.07;
+    }
+    .page-hero-inner { position: relative; z-index: 2; max-width: 720px; }
+    .breadcrumb { display: flex; align-items: center; gap: 0.5rem; font-size: 0.78rem; color: rgba(255,255,255,0.6); margin-bottom: 1.5rem; }
+    .breadcrumb a { color: rgba(255,255,255,0.6); transition: color 0.2s; }
+    .breadcrumb a:hover { color: var(--accent); }
+    .breadcrumb i { font-size: 0.65rem; }
+    .page-hero h1 {
+      font-size: clamp(2.2rem, 5vw, 4rem); font-weight: 900; line-height: 1.1;
+      color: #fff; margin-bottom: 1.25rem;
+    }
+    .page-hero h1 span { color: var(--accent); }
+    .page-hero p { font-size: 1rem; color: rgba(255,255,255,0.75); line-height: 1.8; max-width: 580px; }
+    .hero-chips { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-top: 2rem; }
+    .hero-chip {
+      background: rgba(255,255,255,0.12); backdrop-filter: blur(6px);
+      border: 1px solid rgba(255,255,255,0.2);
+      color: #fff; font-size: 0.78rem; font-weight: 600;
+      padding: 0.4rem 1rem; border-radius: 999px;
+      display: flex; align-items: center; gap: 0.4rem;
+    }
+    .hero-chip i { color: var(--accent); }
+
+    /* ─── SECTION COMMONS ─── */
+    section { padding: 5rem 5%; }
+    .section-label {
+      text-transform: uppercase; letter-spacing: 0.15em;
+      font-size: 0.7rem; font-weight: 700; color: var(--primary); margin-bottom: 0.75rem;
+    }
+    .section-title {
+      font-size: clamp(1.8rem, 3.5vw, 3rem); font-weight: 700; line-height: 1.2; color: #1a1a1a;
+    }
+    .section-sub { font-size: 0.95rem; color: #555; line-height: 1.8; max-width: 600px; margin-top: 0.75rem; }
+
+    /* ─── WHO WE ARE ─── */
+    #who { background: #fff; display: grid; grid-template-columns: 1fr 1fr; gap: 4.5rem; align-items: center; }
+    .who-img { border-radius: 2rem; overflow: hidden; aspect-ratio: 4/3; box-shadow: 0 24px 70px rgba(26,79,156,0.15); position: relative; }
+    .who-img img { width: 100%; height: 100%; object-fit: cover; }
+    .who-img-badge {
+      position: absolute; bottom: 1.5rem; left: 1.5rem;
+      background: var(--primary); color: #fff;
+      border-radius: 1rem; padding: 1rem 1.25rem;
+      font-size: 0.8rem; display: flex; align-items: center; gap: 0.75rem;
+      box-shadow: 0 8px 24px rgba(26,79,156,0.4);
+    }
+    .who-img-badge-icon { font-size: 1.8rem; color: var(--accent); }
+    .who-content { }
+    .who-content p { font-size: 0.9rem; color: #444; line-height: 1.85; margin-top: 1.25rem; }
+    .who-content p + p { margin-top: 1rem; }
+    .who-highlights { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 2rem; }
+    .who-highlight {
+      background: var(--card); border-radius: 1rem; padding: 1.1rem 1.25rem;
+      display: flex; align-items: flex-start; gap: 0.8rem;
+    }
+    .who-hl-icon { width: 36px; height: 36px; border-radius: 50%; background: var(--primary); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 0.9rem; flex-shrink: 0; margin-top: 0.1rem; }
+    .who-hl-title { font-weight: 700; font-size: 0.85rem; margin-bottom: 0.2rem; }
+    .who-hl-text { font-size: 0.78rem; color: #555; line-height: 1.6; }
+
+    /* ─── VISION / MISSION / VALUES ─── */
+    #vmv { background: var(--light); }
+    .vmv-top { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 4rem; }
+    .vmv-card {
+      border-radius: 1.75rem; padding: 2.5rem 2rem; position: relative; overflow: hidden;
+    }
+    .vmv-card.vision { background: var(--primary); color: #fff; }
+    .vmv-card.mission { background: #fff; border: 1px solid rgba(26,79,156,0.1); }
+    .vmv-card::before {
+      content: ""; position: absolute; top: -40px; right: -40px;
+      width: 150px; height: 150px; border-radius: 50%;
+      background: rgba(255,255,255,0.06);
+    }
+    .vmv-label { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; opacity: 0.65; margin-bottom: 0.75rem; }
+    .vmv-card.mission .vmv-label { color: var(--primary); }
+    .vmv-icon { font-size: 2.2rem; margin-bottom: 1rem; }
+    .vmv-card.vision .vmv-icon { color: var(--accent); }
+    .vmv-card.mission .vmv-icon { color: var(--primary); }
+    .vmv-card h3 { font-size: 1.3rem; font-weight: 700; line-height: 1.3; margin-bottom: 0.75rem; }
+    .vmv-card.vision h3 { color: #fff; }
+    .vmv-card p { font-size: 0.88rem; line-height: 1.8; }
+    .vmv-card.vision p { color: rgba(255,255,255,0.8); }
+    .vmv-card.mission p { color: #444; }
+
+    .values-heading { font-size: clamp(1.5rem, 3vw, 2.2rem); font-weight: 700; margin-bottom: 2rem; }
+    .values-heading span { color: var(--primary); }
+    .values-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1.25rem; }
+    .value-card {
+      background: #fff; border-radius: 1.5rem; padding: 1.75rem 1.25rem; text-align: center;
+      border: 1px solid rgba(26,79,156,0.08); transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
+    }
+    .value-card:hover { transform: translateY(-5px); box-shadow: 0 16px 40px rgba(26,79,156,0.12); border-color: var(--accent); }
+    .value-icon {
+      width: 56px; height: 56px; border-radius: 16px; background: var(--card);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.4rem; color: var(--primary); margin: 0 auto 1rem;
+    }
+    .value-name { font-weight: 700; font-size: 0.95rem; color: var(--primary); margin-bottom: 0.5rem; }
+    .value-desc { font-size: 0.78rem; color: #555; line-height: 1.65; }
+
+    /* ─── SERVICES ─── */
+    #services { background: #fff; }
+    .services-intro { display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 3rem; flex-wrap: wrap; gap: 1rem; }
+    .services-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; }
+    .service-card {
+      border-radius: 1.75rem; overflow: hidden;
+      border: 1px solid rgba(26,79,156,0.08);
+      transition: box-shadow 0.25s, transform 0.25s;
+      display: flex; flex-direction: column;
+    }
+    .service-card:hover { transform: translateY(-4px); box-shadow: 0 20px 50px rgba(26,79,156,0.13); }
+    .service-card-top {
+      background: var(--card); padding: 2rem 2rem 1.5rem;
+      display: flex; align-items: flex-start; gap: 1.25rem;
+    }
+    .service-card:nth-child(1) .service-card-top { background: #DBEAFE; }
+    .service-card:nth-child(2) .service-card-top { background: #E0F2FE; }
+    .service-card:nth-child(3) .service-card-top { background: #EFF6FF; }
+    .service-card:nth-child(4) .service-card-top { background: #DBEAFE; }
+    .service-card-icon {
+      width: 54px; height: 54px; border-radius: 14px; background: var(--primary);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.4rem; color: #fff; flex-shrink: 0;
+    }
+    .service-card-meta h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 0.3rem; color: #1a1a1a; }
+    .service-card-meta .s-tag { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--primary); }
+    .service-card-body { padding: 1.5rem 2rem 2rem; flex: 1; }
+    .service-card-body p { font-size: 0.875rem; color: #444; line-height: 1.8; }
+    .service-card-body ul { margin-top: 1rem; display: flex; flex-direction: column; gap: 0.5rem; }
+    .service-card-body ul li { display: flex; align-items: flex-start; gap: 0.6rem; font-size: 0.82rem; color: #333; }
+    .service-card-body ul li i { color: var(--primary); margin-top: 0.15rem; font-size: 0.75rem; flex-shrink: 0; }
+    .service-card-footer { padding: 0 2rem 1.5rem; }
+    .btn-service {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      background: var(--primary); color: #fff; border: none;
+      padding: 0.55rem 1.35rem; border-radius: 999px;
+      font-size: 0.8rem; font-weight: 700; cursor: pointer; transition: opacity 0.2s;
+    }
+    .btn-service:hover { opacity: 0.85; }
+
+    /* ─── USP STRIP ─── */
+    #usp {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--dark) 100%);
+      color: #fff; padding: 4rem 5%; position: relative; overflow: hidden;
+    }
+    #usp::before { content: ""; position: absolute; inset: 0; background: radial-gradient(ellipse at 80% 50%, rgba(56,189,248,0.12) 0%, transparent 60%); }
+    .usp-inner { position: relative; z-index: 2; }
+    .usp-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 2.5rem; flex-wrap: wrap; gap: 1rem; }
+    .usp-top h2 { font-size: clamp(1.6rem, 3vw, 2.6rem); font-weight: 700; }
+    .usp-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+    .usp-item {
+      background: rgba(255,255,255,0.08); backdrop-filter: blur(8px);
+      border: 1px solid rgba(255,255,255,0.15); border-radius: 1.25rem; padding: 1.75rem 1.5rem;
+      transition: background 0.2s;
+    }
+    .usp-item:hover { background: rgba(255,255,255,0.14); }
+    .usp-item i { font-size: 1.75rem; color: var(--accent); margin-bottom: 1rem; }
+    .usp-item h4 { font-size: 1rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .usp-item p { font-size: 0.82rem; color: rgba(255,255,255,0.7); line-height: 1.7; }
+
+    /* ─── TEAM TEASER ─── */
+    #team { background: var(--light); }
+    .team-header { display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 3rem; flex-wrap: wrap; gap: 1rem; }
+    .team-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 1.5rem; }
+    .team-card {
+      background: #fff; border-radius: 1.5rem; overflow: hidden;
+      box-shadow: 0 4px 20px rgba(26,79,156,0.07); transition: transform 0.25s, box-shadow 0.25s;
+    }
+    .team-card:hover { transform: translateY(-5px); box-shadow: 0 16px 40px rgba(26,79,156,0.13); }
+    .team-avatar {
+      width: 100%; aspect-ratio: 1/1; display: flex; align-items: center; justify-content: center;
+      font-family: 'Inter Tight', sans-serif; font-size: 3.5rem; font-weight: 900; color: #fff;
+    }
+    .team-card:nth-child(1) .team-avatar { background: linear-gradient(135deg, var(--primary), #0D4A8C); }
+    .team-card:nth-child(2) .team-avatar { background: linear-gradient(135deg, #0891B2, #38BDF8); }
+    .team-card:nth-child(3) .team-avatar { background: linear-gradient(135deg, #1D4ED8, #3B82F6); }
+    .team-card:nth-child(4) .team-avatar { background: linear-gradient(135deg, #1A4F9C, #60A5FA); }
+    .team-info { padding: 1.25rem 1.25rem 1.5rem; }
+    .team-name { font-weight: 700; font-size: 0.95rem; margin-bottom: 0.2rem; }
+    .team-role { font-size: 0.78rem; color: var(--primary); font-weight: 600; margin-bottom: 0.5rem; }
+    .team-desc { font-size: 0.78rem; color: #555; line-height: 1.65; }
+
+    /* ─── LOCATION ─── */
+    #location { background: #fff; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+    .location-content { }
+    .location-content p { font-size: 0.9rem; color: #444; line-height: 1.85; margin-top: 1rem; margin-bottom: 2rem; }
+    .location-details { display: flex; flex-direction: column; gap: 1rem; }
+    .loc-item { display: flex; align-items: center; gap: 1rem; background: var(--card); border-radius: 1rem; padding: 1rem 1.25rem; }
+    .loc-icon { width: 40px; height: 40px; border-radius: 50%; background: var(--primary); color: #fff; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .loc-icon i { font-size: 0.9rem; }
+    .loc-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: #999; }
+    .loc-value { font-size: 0.875rem; font-weight: 600; color: #1a1a1a; }
+    .location-map {
+      border-radius: 2rem; overflow: hidden; aspect-ratio: 4/3;
+      background: var(--card); display: flex; flex-direction: column; align-items: center; justify-content: center;
+      gap: 1rem; border: 1px solid rgba(26,79,156,0.1);
+      box-shadow: 0 20px 60px rgba(26,79,156,0.12);
+    }
+    .location-map i { font-size: 3rem; color: var(--primary); opacity: 0.4; }
+    .location-map p { font-size: 0.85rem; color: #666; text-align: center; padding: 0 2rem; line-height: 1.6; }
+    .location-map a {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      background: var(--primary); color: #fff; padding: 0.6rem 1.4rem;
+      border-radius: 999px; font-size: 0.8rem; font-weight: 700; transition: opacity 0.2s;
+    }
+    .location-map a:hover { opacity: 0.85; }
+
+    /* ─── CTA FOOTER BAND ─── */
+    #cta-band {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--dark) 100%);
+      text-align: center; padding: 5rem 5%; color: #fff; position: relative; overflow: hidden;
+    }
+    #cta-band::before { content: ""; position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 80%, rgba(56,189,248,0.12) 0%, transparent 60%); }
+    .cta-band-inner { position: relative; z-index: 2; max-width: 600px; margin: 0 auto; }
+    #cta-band h2 { font-size: clamp(1.8rem, 4vw, 3rem); font-weight: 700; line-height: 1.2; margin-bottom: 1rem; }
+    #cta-band p { font-size: 0.95rem; color: rgba(255,255,255,0.75); line-height: 1.8; margin-bottom: 2rem; }
+    .cta-band-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .btn-cta-white {
+      background: #fff; color: var(--primary); border: none;
+      padding: 0.8rem 2rem; border-radius: 999px; font-weight: 700; font-size: 0.9rem;
+      cursor: pointer; transition: box-shadow 0.2s;
+    }
+    .btn-cta-white:hover { box-shadow: 0 8px 24px rgba(255,255,255,0.3); }
+    .btn-cta-outline {
+      background: transparent; color: #fff; border: 2px solid rgba(255,255,255,0.5);
+      padding: 0.78rem 2rem; border-radius: 999px; font-weight: 700; font-size: 0.9rem;
+      cursor: pointer; transition: border-color 0.2s, background 0.2s;
+    }
+    .btn-cta-outline:hover { border-color: #fff; background: rgba(255,255,255,0.1); }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: var(--primary); color: rgba(255,255,255,0.85); padding: 3rem 5% 1.5rem;
+    }
+    .footer-grid {
+      display: grid; grid-template-columns: 1.4fr repeat(3,1fr); gap: 2rem;
+      border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 2.5rem; margin-bottom: 1.5rem;
+    }
+    .footer-logo { font-family: 'Inter Tight', sans-serif; font-size: 1.4rem; font-weight: 700; color: #fff; margin-bottom: 0.75rem; }
+    .footer-desc { font-size: 0.8rem; opacity: 0.6; line-height: 1.7; margin-bottom: 1rem; }
+    .footer-contact-info { font-size: 0.8rem; opacity: 0.7; line-height: 2; }
+    .footer-contact-info i { color: var(--accent); margin-right: 0.35rem; }
+    .footer-col-heading { font-weight: 700; font-size: 0.85rem; color: #fff; margin-bottom: 1rem; }
+    .footer-col-list { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+    .footer-col-list a { font-size: 0.8rem; color: rgba(255,255,255,0.6); transition: color 0.2s; }
+    .footer-col-list a:hover { color: var(--accent); }
+    .footer-bottom { display: flex; align-items: center; justify-content: space-between; font-size: 0.75rem; opacity: 0.5; flex-wrap: wrap; gap: 0.75rem; }
+    .footer-socials { display: flex; gap: 1rem; }
+    .footer-socials a { color: rgba(255,255,255,0.6); font-size: 1rem; transition: color 0.2s; }
+    .footer-socials a:hover { color: var(--accent); }
+    .footer-bottom-links { display: flex; gap: 1.5rem; }
+    .footer-bottom-links a { color: rgba(255,255,255,0.5); font-size: 0.75rem; }
+
+    /* ─── Scrollbar ─── */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: var(--light); }
+    ::-webkit-scrollbar-thumb { background: var(--primary); border-radius: 3px; }
+
+    /* ─── Animations ─── */
+    @keyframes fadeUp { from { opacity:0; transform:translateY(28px); } to { opacity:1; transform:translateY(0); } }
+    .fade-up { animation: fadeUp 0.7s ease both; }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 1100px) {
+      .values-grid { grid-template-columns: repeat(3,1fr); }
+      .team-grid   { grid-template-columns: repeat(2,1fr); }
+    }
+    @media (max-width: 900px) {
+      #who, #location { grid-template-columns: 1fr; gap: 2.5rem; }
+      .vmv-top { grid-template-columns: 1fr; }
+      .usp-grid { grid-template-columns: 1fr 1fr; }
+      .services-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .footer-grid > div:first-child { grid-column: 1 / -1; }
+    }
+    @media (max-width: 768px) {
+      .nav-links, .nav-cta { display: none; }
+      #mob-btn { display: block; }
+      section { padding: 3.5rem 5%; }
+      .page-hero { padding: 3.5rem 5% 3rem; }
+      .values-grid { grid-template-columns: 1fr 1fr; }
+      .usp-grid { grid-template-columns: 1fr; }
+      .team-grid { grid-template-columns: 1fr 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .footer-grid > div:first-child { grid-column: 1 / -1; }
+      .footer-bottom { flex-direction: column; align-items: flex-start; gap: 1rem; }
+      .who-highlights { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 480px) {
+      .values-grid { grid-template-columns: 1fr; }
+      .team-grid   { grid-template-columns: 1fr; }
+      .cta-band-btns { flex-direction: column; align-items: stretch; }
+      .btn-cta-white, .btn-cta-outline { text-align: center; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .footer-grid > div:first-child { grid-column: auto; }
+      .footer-bottom-links { flex-direction: column; gap: 0.5rem; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ═══ NAV ═══ -->
+  <nav>
+    <a href="index.html" class="nav-logo">
+      <i class="fa-solid fa-heart-pulse"></i>
+      <span>Lydville Care & Elders' Home</span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="about.html" class="nav-link active">About Us</a>
+      <a href="index.html#services" class="nav-link">Services</a>
+      <a href="index.html#facilities" class="nav-link">Facilities</a>
+      <a href="index.html#testimonials" class="nav-link">Testimonials</a>
+      <a href="index.html#blog" class="nav-link">Blog</a>
+      <a href="index.html#contact-us" class="nav-link">Contact Us</a>
+    </div>
+    <div class="nav-cta">
+      <a href="index.html#contact-us"><button class="btn-primary">Book a Visit.</button></a>
+      <a href="index.html#contact-us"><button class="btn-outline">Contact Us.</button></a>
+    </div>
+    <button id="mob-btn" aria-label="Open menu"><i class="fa-solid fa-bars"></i></button>
+  </nav>
+
+  <div id="mob-overlay"></div>
+  <div id="mob-drawer" role="dialog" aria-modal="true">
+    <div class="mob-head">
+      <div class="mob-logo"><i class="fa-solid fa-heart-pulse"></i> Lydville Care</div>
+      <button id="mob-close"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <div id="mob-links">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="about.html" class="nav-link active">About Us</a>
+      <a href="index.html#services" class="nav-link">Services</a>
+      <a href="index.html#facilities" class="nav-link">Facilities</a>
+      <a href="index.html#testimonials" class="nav-link">Testimonials</a>
+      <a href="index.html#contact-us" class="nav-link">Contact Us</a>
+    </div>
+    <div class="mob-actions">
+      <a href="index.html#contact-us"><button class="btn-primary">Book a Visit.</button></a>
+      <a href="index.html#contact-us"><button class="btn-outline">Contact Us.</button></a>
+    </div>
+  </div>
+
+  <!-- ═══ HERO BANNER ═══ -->
+  <div class="page-hero">
+    <div class="page-hero-inner fade-up">
+      <div class="breadcrumb">
+        <a href="index.html">Home</a>
+        <i class="fa-solid fa-chevron-right"></i>
+        <span style="color:var(--accent)">About Us</span>
+      </div>
+      <h1>About <span>Lydville Care</span><br />&amp; Elders' Home</h1>
+      <p>A premier senior care and home facility designed to provide a safe, comfortable, and nurturing environment for seniors — located at Isheri Brooks Estate, Kara Isheri, Ogun State.</p>
+      <div class="hero-chips">
+        <span class="hero-chip"><i class="fa-solid fa-location-dot"></i> Isheri Brooks Estate, Ogun State</span>
+        <span class="hero-chip"><i class="fa-solid fa-heart-pulse"></i> Compassionate Care</span>
+        <span class="hero-chip"><i class="fa-solid fa-shield-heart"></i> Safe &amp; Secure Campus</span>
+        <span class="hero-chip"><i class="fa-solid fa-people-group"></i> Community-Centred</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ WHO WE ARE ═══ -->
+  <section id="who">
+    <div class="who-img fade-up">
+      <img src="https://images.unsplash.com/photo-1609220136736-443140cffec6?w=800&q=80" alt="Happy senior residents at Lydville Care" />
+      <div class="who-img-badge">
+        <span class="who-img-badge-icon"><i class="fa-solid fa-heart-pulse"></i></span>
+        <div>
+          <div style="font-weight:700;font-size:0.9rem;">More Than a Facility</div>
+          <div style="opacity:0.75;font-size:0.75rem;">We are a family.</div>
+        </div>
+      </div>
+    </div>
+    <div class="who-content fade-up">
+      <div class="section-label">Who We Are</div>
+      <h2 class="section-title">A home built on dignity, love &amp; community</h2>
+      <p>
+        <strong>Lydville Care and Elders' Home</strong> is a premier senior care and home facility designed to provide a safe, comfortable, and nurturing environment for seniors. Located at Isheri Brooks Estate, Kara Isheri (near Ojodu Berger), Ogun State, our care centre combines compassionate care with modern amenities to ensure that every resident lives with dignity, fulfilment, and joy.
+      </p>
+      <p>
+        Whether your loved one requires assisted living or independent living, we are dedicated to meeting their unique needs with professionalism and love. We understand that ageing comes with unique challenges, and our mission is to provide a supportive space where seniors can thrive physically, emotionally, and socially.
+      </p>
+      <div class="who-highlights">
+        <div class="who-highlight">
+          <div class="who-hl-icon"><i class="fa-solid fa-building"></i></div>
+          <div>
+            <div class="who-hl-title">Modern &amp; Secure Campus</div>
+            <div class="who-hl-text">Independent residences, assisted living spaces, communal areas, and a relaxation &amp; leisure centre.</div>
+          </div>
+        </div>
+        <div class="who-highlight">
+          <div class="who-hl-icon"><i class="fa-solid fa-stethoscope"></i></div>
+          <div>
+            <div class="who-hl-title">Holistic Approach</div>
+            <div class="who-hl-text">Addressing physical, mental, and emotional wellbeing — including healthy feeding and supervised medication.</div>
+          </div>
+        </div>
+        <div class="who-highlight">
+          <div class="who-hl-icon"><i class="fa-solid fa-clipboard-list"></i></div>
+          <div>
+            <div class="who-hl-title">Personalised Plans</div>
+            <div class="who-hl-text">Every resident's care is tailored specifically to their needs and personal preferences.</div>
+          </div>
+        </div>
+        <div class="who-highlight">
+          <div class="who-hl-icon"><i class="fa-solid fa-users"></i></div>
+          <div>
+            <div class="who-hl-title">Vibrant Community</div>
+            <div class="who-hl-text">A place where lifelong friendships are formed and meaningful connections are made every day.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ VISION / MISSION / VALUES ═══ -->
+  <section id="vmv">
+    <div class="vmv-top">
+      <!-- Vision -->
+      <div class="vmv-card vision fade-up">
+        <div class="vmv-label">Our Vision</div>
+        <div class="vmv-icon"><i class="fa-solid fa-eye"></i></div>
+        <h3>Quality care for the elderly in a loving and nourishing home.</h3>
+        <p>We envision a Nigeria where every senior citizen can access world-class care within a warm, home-like environment that respects their history, honours their individuality, and enriches their golden years.</p>
+      </div>
+      <!-- Mission -->
+      <div class="vmv-card mission fade-up">
+        <div class="vmv-label">Our Mission</div>
+        <div class="vmv-icon"><i class="fa-solid fa-bullseye"></i></div>
+        <h3 style="color:#1a1a1a;">Personalised care that nourishes the whole person.</h3>
+        <p>To deliver personalised care and a loving elders' home that meets the physical, medical, emotional, spiritual, and social needs of each resident — while fostering a sense of healthy living, purpose, belonging, and happiness within the home.</p>
+      </div>
+    </div>
+
+    <!-- Core Values -->
+    <h2 class="values-heading">Our <span>Core Values</span></h2>
+    <div class="values-grid">
+      <div class="value-card fade-up">
+        <div class="value-icon"><i class="fa-solid fa-heart"></i></div>
+        <div class="value-name">Compassion</div>
+        <div class="value-desc">Treating every resident with sincere kindness, empathy, and deep respect in all interactions.</div>
+      </div>
+      <div class="value-card fade-up">
+        <div class="value-icon"><i class="fa-solid fa-star"></i></div>
+        <div class="value-name">Excellence</div>
+        <div class="value-desc">Providing top-tier care and services tailored to the individual needs of every resident.</div>
+      </div>
+      <div class="value-card fade-up">
+        <div class="value-icon"><i class="fa-solid fa-person-walking"></i></div>
+        <div class="value-name">Independence</div>
+        <div class="value-desc">Encouraging autonomy, self-confidence, and personal dignity in our residents every day.</div>
+      </div>
+      <div class="value-card fade-up">
+        <div class="value-icon"><i class="fa-solid fa-people-group"></i></div>
+        <div class="value-name">Community</div>
+        <div class="value-desc">Fostering a sense of family, belonging, and connection for all residents and their families.</div>
+      </div>
+      <div class="value-card fade-up">
+        <div class="value-icon"><i class="fa-solid fa-shield-halved"></i></div>
+        <div class="value-name">Safety</div>
+        <div class="value-desc">Ensuring a secure, comfortable, and professionally managed environment at all times.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ OUR SERVICES ═══ -->
+  <section id="services">
+    <div class="services-intro">
+      <div>
+        <div class="section-label">Products &amp; Services</div>
+        <h2 class="section-title">Care tailored to every need</h2>
+        <p class="section-sub">From full assisted living to flexible short stays and in-home care giver support, we have a solution for every senior and every family.</p>
+      </div>
+      <a href="index.html#contact-us"><button class="btn-primary" style="white-space:nowrap;">Enquire Now →</button></a>
+    </div>
+    <div class="services-grid">
+
+      <!-- Assisted Living -->
+      <div class="service-card fade-up">
+        <div class="service-card-top">
+          <div class="service-card-icon"><i class="fa-solid fa-house-medical"></i></div>
+          <div class="service-card-meta">
+            <div class="s-tag">Assisted Living</div>
+            <h3>Lydville Assisted Living Facility</h3>
+          </div>
+        </div>
+        <div class="service-card-body">
+          <p>Personalised care plans for seniors requiring help with daily activities. Ideal for seniors who are not able to live at home safely but don't require intensive medical care.</p>
+          <ul>
+            <li><i class="fa-solid fa-check"></i> Help with dressing, bathing &amp; grooming</li>
+            <li><i class="fa-solid fa-check"></i> Transportation &amp; housekeeping support</li>
+            <li><i class="fa-solid fa-check"></i> Cooking &amp; meal preparation</li>
+            <li><i class="fa-solid fa-check"></i> Medication management &amp; monitoring</li>
+          </ul>
+        </div>
+        <div class="service-card-footer">
+          <a href="index.html#contact-us"><button class="btn-service">Enquire Now <i class="fa-solid fa-arrow-right"></i></button></a>
+        </div>
+      </div>
+
+      <!-- Independent Living -->
+      <div class="service-card fade-up">
+        <div class="service-card-top">
+          <div class="service-card-icon"><i class="fa-solid fa-person-shelter"></i></div>
+          <div class="service-card-meta">
+            <div class="s-tag">Independent Living</div>
+            <h3>Lydville Independent Living Community</h3>
+          </div>
+        </div>
+        <div class="service-card-body">
+          <p>Comfortable and private residences for seniors who want to maintain their independence with access to support services when needed. Loneliness is one of the biggest challenges the elderly face — independent living allows seniors to socialise and live among like individuals.</p>
+          <ul>
+            <li><i class="fa-solid fa-check"></i> Private, comfortable residences</li>
+            <li><i class="fa-solid fa-check"></i> Active social community &amp; events</li>
+            <li><i class="fa-solid fa-check"></i> Optional support services on demand</li>
+            <li><i class="fa-solid fa-check"></i> Safe, secure, and professionally staffed</li>
+          </ul>
+        </div>
+        <div class="service-card-footer">
+          <a href="index.html#contact-us"><button class="btn-service">Enquire Now <i class="fa-solid fa-arrow-right"></i></button></a>
+        </div>
+      </div>
+
+      <!-- Short Stay -->
+      <div class="service-card fade-up">
+        <div class="service-card-top">
+          <div class="service-card-icon"><i class="fa-solid fa-calendar-check"></i></div>
+          <div class="service-card-meta">
+            <div class="s-tag">Short Stay / Respite</div>
+            <h3>Lydville Short Stay Living Facility</h3>
+          </div>
+        </div>
+        <div class="service-card-body">
+          <p>A flexible short-stay option for seniors who desire a change of environment or wish to experience our community. Also ideal for families who don't want to leave their senior loved ones at home alone while on holiday or out of town.</p>
+          <ul>
+            <li><i class="fa-solid fa-check"></i> Temporary &amp; respite placements</li>
+            <li><i class="fa-solid fa-check"></i> Full access to all community facilities</li>
+            <li><i class="fa-solid fa-check"></i> Flexible stay durations</li>
+            <li><i class="fa-solid fa-check"></i> Peace of mind for travelling families</li>
+          </ul>
+        </div>
+        <div class="service-card-footer">
+          <a href="index.html#contact-us"><button class="btn-service">Enquire Now <i class="fa-solid fa-arrow-right"></i></button></a>
+        </div>
+      </div>
+
+      <!-- Care Givers -->
+      <div class="service-card fade-up">
+        <div class="service-card-top">
+          <div class="service-card-icon"><i class="fa-solid fa-hand-holding-medical"></i></div>
+          <div class="service-card-meta">
+            <div class="s-tag">Professional Care Givers</div>
+            <h3>Lydville Care Givers</h3>
+          </div>
+        </div>
+        <div class="service-card-body">
+          <p>Our professional care givers ensure the wellbeing and safety of those in their care, acting as a liaison between the resident, their family, and healthcare providers.</p>
+          <ul>
+            <li><i class="fa-solid fa-check"></i> Assistance with bathing, dressing &amp; meals</li>
+            <li><i class="fa-solid fa-check"></i> Health monitoring &amp; medication administration</li>
+            <li><i class="fa-solid fa-check"></i> Coordination of medical appointments</li>
+            <li><i class="fa-solid fa-check"></i> Compassionate daily companionship</li>
+          </ul>
+        </div>
+        <div class="service-card-footer">
+          <a href="index.html#contact-us"><button class="btn-service">Enquire Now <i class="fa-solid fa-arrow-right"></i></button></a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══ USP STRIP ═══ -->
+  <section id="usp">
+    <div class="usp-inner">
+      <div class="usp-top">
+        <h2>Why choose Lydville Care?</h2>
+        <a href="index.html#contact-us"><button class="btn-cta-white">Schedule a Visit →</button></a>
+      </div>
+      <div class="usp-grid">
+        <div class="usp-item fade-up">
+          <i class="fa-solid fa-building-columns"></i>
+          <h4>State-of-the-Art Facilities</h4>
+          <p>Our modern and secure campus includes independent residences, assisted living spaces, communal areas, and a relaxation &amp; leisure centre.</p>
+        </div>
+        <div class="usp-item fade-up">
+          <i class="fa-solid fa-heart-circle-check"></i>
+          <h4>Holistic Approach to Care</h4>
+          <p>We address all aspects of wellbeing — physical, mental, emotional, spiritual, and social — including healthy feeding and supervised medication.</p>
+        </div>
+        <div class="usp-item fade-up">
+          <i class="fa-solid fa-clipboard-list"></i>
+          <h4>Personalised Care Plans</h4>
+          <p>Every resident's care is tailored to their specific needs and personal preferences — no two plans are the same.</p>
+        </div>
+        <div class="usp-item fade-up">
+          <i class="fa-solid fa-user-nurse"></i>
+          <h4>Warm &amp; Professional Team</h4>
+          <p>Our staff is not just highly trained but also deeply compassionate, believing our residents are our family.</p>
+        </div>
+        <div class="usp-item fade-up">
+          <i class="fa-solid fa-people-group"></i>
+          <h4>Vibrant Community Life</h4>
+          <p>Lydville Care is more than a facility — it is a place where lifelong friendships are formed and meaningful connections are made.</p>
+        </div>
+        <div class="usp-item fade-up">
+          <i class="fa-solid fa-shield-halved"></i>
+          <h4>Safety First, Always</h4>
+          <p>Our secure, professionally managed campus gives residents and families complete peace of mind around the clock.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ TEAM TEASER ═══ -->
+  <section id="team">
+    <div class="team-header">
+      <div>
+        <div class="section-label">Our People</div>
+        <h2 class="section-title">Dedicated professionals, warm hearts</h2>
+        <p class="section-sub">Our team of trained professionals is committed to creating a warm, inclusive, and enriching environment for all residents.</p>
+      </div>
+      <a href="index.html#contact-us"><button class="btn-primary">Meet Our Team →</button></a>
+    </div>
+    <div class="team-grid">
+      <div class="team-card fade-up">
+        <div class="team-avatar">C</div>
+        <div class="team-info">
+          <div class="team-name">Care Manager</div>
+          <div class="team-role">Residential Care</div>
+          <div class="team-desc">Oversees day-to-day resident wellbeing, ensuring personalised care plans are followed with compassion and professionalism.</div>
+        </div>
+      </div>
+      <div class="team-card fade-up">
+        <div class="team-avatar">N</div>
+        <div class="team-info">
+          <div class="team-name">Lead Nurse</div>
+          <div class="team-role">Medical Support</div>
+          <div class="team-desc">Administers medications, monitors health conditions, and coordinates all medical appointments and external referrals.</div>
+        </div>
+      </div>
+      <div class="team-card fade-up">
+        <div class="team-avatar">A</div>
+        <div class="team-info">
+          <div class="team-name">Activities Coordinator</div>
+          <div class="team-role">Community & Wellbeing</div>
+          <div class="team-desc">Plans and runs social events, group activities, and recreational programmes to keep residents engaged and connected.</div>
+        </div>
+      </div>
+      <div class="team-card fade-up">
+        <div class="team-avatar">D</div>
+        <div class="team-info">
+          <div class="team-name">Dining & Nutrition</div>
+          <div class="team-role">Healthy Feeding</div>
+          <div class="team-desc">Prepares nutritious, resident-approved meals that support overall health and meet individual dietary requirements.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ LOCATION ═══ -->
+  <section id="location">
+    <div class="location-content fade-up">
+      <div class="section-label">Find Us</div>
+      <h2 class="section-title">Conveniently located in Ogun State</h2>
+      <p>We are situated within the peaceful Isheri Brooks Estate, right beside the World Filling Station on Kara Isheri — easily accessible from Ojodu Berger and the Lagos–Abeokuta Expressway.</p>
+      <div class="location-details">
+        <div class="loc-item">
+          <div class="loc-icon"><i class="fa-solid fa-location-dot"></i></div>
+          <div>
+            <div class="loc-label">Full Address</div>
+            <div class="loc-value">Isheri Brooks Estate, beside World Filling Station, Kara Isheri, Ogun State</div>
+          </div>
+        </div>
+        <div class="loc-item">
+          <div class="loc-icon"><i class="fa-solid fa-map-pin"></i></div>
+          <div>
+            <div class="loc-label">Nearest Landmark</div>
+            <div class="loc-value">Near Ojodu Berger, Lagos–Ogun border</div>
+          </div>
+        </div>
+        <div class="loc-item">
+          <div class="loc-icon"><i class="fa-solid fa-phone"></i></div>
+          <div>
+            <div class="loc-label">Phone</div>
+            <div class="loc-value">To be announced</div>
+          </div>
+        </div>
+        <div class="loc-item">
+          <div class="loc-icon"><i class="fa-solid fa-envelope"></i></div>
+          <div>
+            <div class="loc-label">Email</div>
+            <div class="loc-value">To be announced</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="location-map fade-up">
+      <i class="fa-solid fa-map-location-dot"></i>
+      <p><strong>Isheri Brooks Estate</strong><br/>beside World Filling Station,<br/>Kara Isheri, Ogun State</p>
+      <a href="https://maps.google.com/?q=Kara+Isheri+Ogun+State" target="_blank" rel="noopener">
+        <i class="fa-solid fa-arrow-up-right-from-square"></i> Open in Google Maps
+      </a>
+    </div>
+  </section>
+
+  <!-- ═══ CTA BAND ═══ -->
+  <section id="cta-band">
+    <div class="cta-band-inner fade-up">
+      <h2>Ready to give your loved one the care they deserve?</h2>
+      <p>Visit us at Isheri Brooks Estate, Kara Isheri, Ogun State and experience the warmth of Lydville Care first-hand. Our team is ready to walk you through every option.</p>
+      <div class="cta-band-btns">
+        <a href="index.html#contact-us"><button class="btn-cta-white">Schedule a Visit →</button></a>
+        <a href="index.html#contact-us"><button class="btn-cta-outline">Send Us a Message</button></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer>
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">Lydville Care.</div>
+        <p class="footer-desc">A warm, nurturing home where every senior is celebrated, supported, and empowered to live life to the fullest — with dignity and grace.</p>
+        <div class="footer-contact-info">
+          <div><i class="fa-solid fa-location-dot"></i> Isheri Brooks Estate, beside World Filling Station, Kara Isheri, Ogun State</div>
+          <div><i class="fa-solid fa-phone"></i> To be announced</div>
+          <div><i class="fa-solid fa-envelope"></i> To be announced</div>
+        </div>
+      </div>
+      <div>
+        <h4 class="footer-col-heading">Our Services</h4>
+        <ul class="footer-col-list">
+          <li><a href="#">Assisted Living</a></li>
+          <li><a href="#">Independent Living</a></li>
+          <li><a href="#">Short Stay Facility</a></li>
+          <li><a href="#">Care Giver Support</a></li>
+          <li><a href="index.html#contact-us">Enquire Now</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer-col-heading">Company</h4>
+        <ul class="footer-col-list">
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="about.html#vmv">Our Vision &amp; Mission</a></li>
+          <li><a href="about.html#vmv">Core Values</a></li>
+          <li><a href="about.html#team">Our Team</a></li>
+          <li><a href="index.html#blog">News &amp; Events</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer-col-heading">Quick Links</h4>
+        <ul class="footer-col-list">
+          <li><a href="index.html#contact-us">Schedule a Visit</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">FAQs</a></li>
+          <li><a href="index.html#contact-us">Contact Us</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>All rights reserved to ©Lydville Care &amp; Elders' Home 2024</span>
+      <div class="footer-socials">
+        <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="#" aria-label="X / Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+      </div>
+      <div class="footer-bottom-links">
+        <a href="#">Terms of Service</a>
+        <a href="#">Privacy Policy</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu
+    const mobBtn     = document.getElementById("mob-btn");
+    const mobClose   = document.getElementById("mob-close");
+    const mobOverlay = document.getElementById("mob-overlay");
+    const mobDrawer  = document.getElementById("mob-drawer");
+    const openMenu  = () => { mobDrawer.classList.add("open");    mobOverlay.classList.add("open");    document.body.style.overflow = "hidden"; };
+    const closeMenu = () => { mobDrawer.classList.remove("open"); mobOverlay.classList.remove("open"); document.body.style.overflow = ""; };
+    mobBtn.addEventListener("click", openMenu);
+    mobClose.addEventListener("click", closeMenu);
+    mobOverlay.addEventListener("click", closeMenu);
+    document.querySelectorAll("#mob-links .nav-link").forEach(l => l.addEventListener("click", closeMenu));
+
+    // Intersection observer for fade-up animations
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.style.animationPlayState = "running"; obs.unobserve(e.target); } });
+    }, { threshold: 0.12 });
+    document.querySelectorAll(".fade-up").forEach(el => {
+      el.style.animationPlayState = "paused";
+      obs.observe(el);
+    });
+  </script>
+</body>
+</html>
