@@ -5,334 +5,1150 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Facilities — Lydville Care & Elders' Home</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&family=Poppins:wght@300;400;500;600&display=swap"
+    rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <style>
     :root {
       --primary: #1A4F9C;
-      --accent:  #38BDF8;
-      --light:   #F0F6FF;
-      --card:    #E0EDFF;
-      --dark:    #0D2B6B;
+      --accent: #38BDF8;
+      --light: #F0F6FF;
+      --card: #E0EDFF;
+      --dark: #0D2B6B;
     }
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body { font-family: 'Poppins', sans-serif; background: var(--light); color: #1a1a1a; overflow-x: hidden; }
-    h1, h2, h3, h4 { font-family: 'Inter Tight', sans-serif; }
-    button { font-family: 'Poppins', sans-serif !important; }
-    a { text-decoration: none; }
-    img { display: block; max-width: 100%; }
-    
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: var(--light);
+      color: #1a1a1a;
+      overflow-x: hidden;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+      font-family: 'Inter Tight', sans-serif;
+    }
+
+    button {
+      font-family: 'Poppins', sans-serif !important;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
     nav {
-      position: sticky; top: 0; z-index: 100;
-      background: rgba(240,246,255,0.93); backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(26,79,156,0.12);
-      display: flex; align-items: center; justify-content: space-between; padding: 0.9rem 5%;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(240, 246, 255, 0.93);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(26, 79, 156, 0.12);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.9rem 5%;
     }
+
     .nav-logo {
-      font-family: 'Inter Tight', sans-serif; font-size: 1.3rem; font-weight: 700;
-      color: var(--primary); display: flex; align-items: center; gap: 0.4rem; flex-shrink: 0;
+      font-family: 'Inter Tight', sans-serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      flex-shrink: 0;
     }
-    .nav-logo i { font-size: 1.3rem; color: var(--primary); }
-    .nav-links { display: flex; gap: 1.75rem; }
-    .nav-link { font-size: 0.875rem; font-weight: 500; color: #444; transition: color 0.2s; }
-    .nav-link:hover, .nav-link.active { color: var(--primary); }
-    .nav-cta { display: flex; gap: 8px; flex-shrink: 0; }
+
+    .nav-logo i {
+      font-size: 1.3rem;
+      color: var(--primary);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.75rem;
+    }
+
+    .nav-link {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: #444;
+      transition: color 0.2s;
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+      color: var(--primary);
+    }
+
+    .nav-cta {
+      display: flex;
+      gap: 8px;
+      flex-shrink: 0;
+    }
+
     .btn-primary {
-      background: var(--primary); color: #fff; border: none;
-      padding: 0.55rem 1.4rem; border-radius: 999px; font-size: 0.875rem; font-weight: 600;
-      cursor: pointer; transition: opacity 0.2s;
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      padding: 0.55rem 1.4rem;
+      border-radius: 999px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: opacity 0.2s;
     }
-    .btn-primary:hover { opacity: 0.85; }
+
+    .btn-primary:hover {
+      opacity: 0.85;
+    }
+
     .btn-outline {
-      background: transparent; color: var(--primary); border: 2px solid var(--primary);
-      padding: 0.5rem 1.3rem; border-radius: 999px; font-size: 0.875rem; font-weight: 600;
-      cursor: pointer; transition: all 0.2s;
+      background: transparent;
+      color: var(--primary);
+      border: 2px solid var(--primary);
+      padding: 0.5rem 1.3rem;
+      border-radius: 999px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
     }
-    .btn-outline:hover { background: var(--primary); color: #fff; }
+
+    .btn-outline:hover {
+      background: var(--primary);
+      color: #fff;
+    }
+
     #mob-btn {
-      display: none; background: none; border: none; cursor: pointer;
-      color: var(--primary); font-size: 1.5rem; padding: 0.25rem;
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: var(--primary);
+      font-size: 1.5rem;
+      padding: 0.25rem;
     }
 
     #mob-overlay {
-      display: none; position: fixed; inset: 0; background: rgba(10,30,70,0.5);
-      z-index: 200; opacity: 0; transition: opacity 0.3s;
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(10, 30, 70, 0.5);
+      z-index: 200;
+      opacity: 0;
+      transition: opacity 0.3s;
     }
-    #mob-overlay.open { display: block; opacity: 1; }
+
+    #mob-overlay.open {
+      display: block;
+      opacity: 1;
+    }
+
     #mob-drawer {
-      position: fixed; top: 0; right: -100%; width: min(320px,85vw); height: 100%;
-      background: #fff; z-index: 201; padding: 2rem 1.75rem;
-      transition: right 0.35s cubic-bezier(0.4,0,0.2,1);
-      display: flex; flex-direction: column; gap: 1rem;
-      box-shadow: -4px 0 30px rgba(26,79,156,0.2);
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: min(320px, 85vw);
+      height: 100%;
+      background: #fff;
+      z-index: 201;
+      padding: 2rem 1.75rem;
+      transition: right 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      box-shadow: -4px 0 30px rgba(26, 79, 156, 0.2);
     }
-    #mob-drawer.open { right: 0; }
-    .mob-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem; }
-    .mob-logo { font-family: 'Inter Tight', sans-serif; font-size: 1.15rem; font-weight: 700; color: var(--primary); display: flex; align-items: center; gap: 0.4rem; }
-    #mob-close { background: none; border: none; cursor: pointer; font-size: 1.4rem; color: #666; }
-    #mob-links { display: flex; flex-direction: column; gap: 0.25rem; }
-    #mob-links .nav-link { display: block; padding: 0.75rem 0.5rem; border-bottom: 1px solid rgba(26,79,156,0.08); font-size: 0.95rem; }
-    .mob-actions { margin-top: auto; display: flex; flex-direction: column; gap: 0.75rem; }
+
+    #mob-drawer.open {
+      right: 0;
+    }
+
+    .mob-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1rem;
+    }
+
+    .mob-logo {
+      font-family: 'Inter Tight', sans-serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    #mob-close {
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 1.4rem;
+      color: #666;
+    }
+
+    #mob-links {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+
+    #mob-links .nav-link {
+      display: block;
+      padding: 0.75rem 0.5rem;
+      border-bottom: 1px solid rgba(26, 79, 156, 0.08);
+      font-size: 0.95rem;
+    }
+
+    .mob-actions {
+      margin-top: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
     .mob-actions .btn-primary,
-    .mob-actions .btn-outline { width: 100%; text-align: center; padding: 0.75rem; }
+    .mob-actions .btn-outline {
+      width: 100%;
+      text-align: center;
+      padding: 0.75rem;
+    }
 
     .page-hero {
       background: linear-gradient(135deg, var(--primary) 0%, var(--dark) 100%);
-      padding: 5rem 5% 4rem; position: relative; overflow: hidden;
+      padding: 5rem 5% 4rem;
+      position: relative;
+      overflow: hidden;
     }
+
     .page-hero::before {
-      content: ""; position: absolute; inset: 0;
-      background: radial-gradient(ellipse at 70% 50%, rgba(56,189,248,0.15) 0%, transparent 60%);
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 70% 50%, rgba(56, 189, 248, 0.15) 0%, transparent 60%);
     }
+
     .page-hero::after {
-      content: ""; position: absolute; inset: 0;
+      content: "";
+      position: absolute;
+      inset: 0;
       background: url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=1400&q=80') center/cover;
       opacity: 0.07;
     }
-    .page-hero-inner { position: relative; z-index: 2; max-width: 720px; }
-    .breadcrumb { display: flex; align-items: center; gap: 0.5rem; font-size: 0.78rem; color: rgba(255,255,255,0.6); margin-bottom: 1.5rem; }
-    .breadcrumb a { color: rgba(255,255,255,0.6); transition: color 0.2s; }
-    .breadcrumb a:hover { color: var(--accent); }
-    .breadcrumb i { font-size: 0.65rem; }
-    .page-hero h1 {
-      font-size: clamp(2.2rem, 5vw, 4rem); font-weight: 900; line-height: 1.1;
-      color: #fff; margin-bottom: 1.25rem;
-    }
-    .page-hero h1 span { color: var(--accent); }
-    .page-hero p { font-size: 1rem; color: rgba(255,255,255,0.75); line-height: 1.8; max-width: 580px; }
-    .hero-chips { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-top: 2rem; }
-    .hero-chip {
-      background: rgba(255,255,255,0.12); backdrop-filter: blur(6px);
-      border: 1px solid rgba(255,255,255,0.2);
-      color: #fff; font-size: 0.78rem; font-weight: 600;
-      padding: 0.4rem 1rem; border-radius: 999px;
-      display: flex; align-items: center; gap: 0.4rem;
-    }
-    .hero-chip i { color: var(--accent); }
 
-    section { padding: 5rem 5%; }
+    .page-hero-inner {
+      position: relative;
+      z-index: 2;
+      max-width: 720px;
+    }
+
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.78rem;
+      color: rgba(255, 255, 255, 0.6);
+      margin-bottom: 1.5rem;
+    }
+
+    .breadcrumb a {
+      color: rgba(255, 255, 255, 0.6);
+      transition: color 0.2s;
+    }
+
+    .breadcrumb a:hover {
+      color: var(--accent);
+    }
+
+    .breadcrumb i {
+      font-size: 0.65rem;
+    }
+
+    .page-hero h1 {
+      font-size: clamp(2.2rem, 5vw, 4rem);
+      font-weight: 900;
+      line-height: 1.1;
+      color: #fff;
+      margin-bottom: 1.25rem;
+    }
+
+    .page-hero h1 span {
+      color: var(--accent);
+    }
+
+    .page-hero p {
+      font-size: 1rem;
+      color: rgba(255, 255, 255, 0.75);
+      line-height: 1.8;
+      max-width: 580px;
+    }
+
+    .hero-chips {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      margin-top: 2rem;
+    }
+
+    .hero-chip {
+      background: rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(6px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: #fff;
+      font-size: 0.78rem;
+      font-weight: 600;
+      padding: 0.4rem 1rem;
+      border-radius: 999px;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .hero-chip i {
+      color: var(--accent);
+    }
+
+    section {
+      padding: 5rem 5%;
+    }
+
     .section-label {
-      text-transform: uppercase; letter-spacing: 0.15em;
-      font-size: 0.7rem; font-weight: 700; color: var(--primary); margin-bottom: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 0.75rem;
     }
+
     .section-title {
-      font-size: clamp(1.8rem, 3.5vw, 3rem); font-weight: 700; line-height: 1.2; color: #1a1a1a;
+      font-size: clamp(1.8rem, 3.5vw, 3rem);
+      font-weight: 700;
+      line-height: 1.2;
+      color: #1a1a1a;
     }
-    .section-sub { font-size: 0.95rem; color: #555; line-height: 1.8; max-width: 600px; margin-top: 0.75rem; }
+
+    .section-sub {
+      font-size: 0.95rem;
+      color: #555;
+      line-height: 1.8;
+      max-width: 600px;
+      margin-top: 0.75rem;
+    }
 
     #campus-overview {
       background: #fff;
-      display: grid; grid-template-columns: 1fr 1fr; gap: 4.5rem; align-items: center;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4.5rem;
+      align-items: center;
     }
-    .overview-img { border-radius: 2rem; overflow: hidden; aspect-ratio: 4/3; box-shadow: 0 24px 70px rgba(26,79,156,0.15); position: relative; }
-    .overview-img img { width: 100%; height: 100%; object-fit: cover; }
-    .overview-img-badge {
-      position: absolute; bottom: 1.5rem; left: 1.5rem;
-      background: var(--primary); color: #fff;
-      border-radius: 1rem; padding: 1rem 1.25rem;
-      font-size: 0.8rem; display: flex; align-items: center; gap: 0.75rem;
-      box-shadow: 0 8px 24px rgba(26,79,156,0.4);
-    }
-    .overview-img-badge i { font-size: 1.8rem; color: var(--accent); }
-    .overview-content p { font-size: 0.9rem; color: #444; line-height: 1.85; margin-top: 1.25rem; }
-    .overview-content p + p { margin-top: 1rem; }
-    .overview-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 2rem; }
-    .overview-stat {
-      background: var(--card); border-radius: 1rem; padding: 1.25rem 1rem; text-align: center;
-    }
-    .overview-stat-value { font-family: 'Inter Tight', sans-serif; font-size: 1.8rem; font-weight: 900; color: var(--primary); line-height: 1; }
-    .overview-stat-label { font-size: 0.75rem; color: #555; margin-top: 0.3rem; line-height: 1.4; }
 
-    #amenities { background: var(--light); }
-    .amenities-header { display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 3rem; flex-wrap: wrap; gap: 1rem; }
-    .amenities-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.75rem; }
+    .overview-img {
+      border-radius: 2rem;
+      overflow: hidden;
+      aspect-ratio: 4/3;
+      box-shadow: 0 24px 70px rgba(26, 79, 156, 0.15);
+      position: relative;
+    }
+
+    .overview-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .overview-img-badge {
+      position: absolute;
+      bottom: 1.5rem;
+      left: 1.5rem;
+      background: var(--primary);
+      color: #fff;
+      border-radius: 1rem;
+      padding: 1rem 1.25rem;
+      font-size: 0.8rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      box-shadow: 0 8px 24px rgba(26, 79, 156, 0.4);
+    }
+
+    .overview-img-badge i {
+      font-size: 1.8rem;
+      color: var(--accent);
+    }
+
+    .overview-content p {
+      font-size: 0.9rem;
+      color: #444;
+      line-height: 1.85;
+      margin-top: 1.25rem;
+    }
+
+    .overview-content p+p {
+      margin-top: 1rem;
+    }
+
+    .overview-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .overview-stat {
+      background: var(--card);
+      border-radius: 1rem;
+      padding: 1.25rem 1rem;
+      text-align: center;
+    }
+
+    .overview-stat-value {
+      font-family: 'Inter Tight', sans-serif;
+      font-size: 1.8rem;
+      font-weight: 900;
+      color: var(--primary);
+      line-height: 1;
+    }
+
+    .overview-stat-label {
+      font-size: 0.75rem;
+      color: #555;
+      margin-top: 0.3rem;
+      line-height: 1.4;
+    }
+
+    #amenities {
+      background: var(--light);
+    }
+
+    .amenities-header {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      margin-bottom: 3rem;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .amenities-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.75rem;
+    }
+
     .amenity-card {
-      background: #fff; border-radius: 1.75rem; overflow: hidden;
-      border: 1px solid rgba(26,79,156,0.08);
+      background: #fff;
+      border-radius: 1.75rem;
+      overflow: hidden;
+      border: 1px solid rgba(26, 79, 156, 0.08);
       transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
-      display: flex; flex-direction: column;
+      display: flex;
+      flex-direction: column;
     }
-    .amenity-card:hover { transform: translateY(-6px); box-shadow: 0 20px 50px rgba(26,79,156,0.13); border-color: var(--accent); }
-    .amenity-card-img { aspect-ratio: 16/9; overflow: hidden; position: relative; }
-    .amenity-card-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s; }
-    .amenity-card:hover .amenity-card-img img { transform: scale(1.05); }
+
+    .amenity-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 50px rgba(26, 79, 156, 0.13);
+      border-color: var(--accent);
+    }
+
+    .amenity-card-img {
+      aspect-ratio: 16/9;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .amenity-card-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s;
+    }
+
+    .amenity-card:hover .amenity-card-img img {
+      transform: scale(1.05);
+    }
+
     .amenity-card-img-overlay {
-      position: absolute; inset: 0;
-      background: linear-gradient(to top, rgba(13,43,107,0.5) 0%, transparent 50%);
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(13, 43, 107, 0.5) 0%, transparent 50%);
     }
-    .amenity-card-body { padding: 1.75rem; flex: 1; display: flex; flex-direction: column; gap: 0.75rem; }
+
+    .amenity-card-body {
+      padding: 1.75rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
     .amenity-icon-wrap {
-      width: 52px; height: 52px; border-radius: 14px; background: var(--card);
-      display: flex; align-items: center; justify-content: center; font-size: 1.3rem; color: var(--primary);
+      width: 52px;
+      height: 52px;
+      border-radius: 14px;
+      background: var(--card);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      color: var(--primary);
     }
-    .amenity-title { font-family: 'Inter Tight', sans-serif; font-weight: 700; font-size: 1.05rem; color: #1a1a1a; }
-    .amenity-desc { font-size: 0.84rem; color: #555; line-height: 1.7; flex: 1; }
-    .amenity-tags { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 0.5rem; }
+
+    .amenity-title {
+      font-family: 'Inter Tight', sans-serif;
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: #1a1a1a;
+    }
+
+    .amenity-desc {
+      font-size: 0.84rem;
+      color: #555;
+      line-height: 1.7;
+      flex: 1;
+    }
+
+    .amenity-tags {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-top: 0.5rem;
+    }
+
     .amenity-tag {
-      font-size: 0.7rem; font-weight: 600; color: var(--primary);
-      background: var(--card); border-radius: 999px; padding: 0.2rem 0.65rem;
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: var(--primary);
+      background: var(--card);
+      border-radius: 999px;
+      padding: 0.2rem 0.65rem;
     }
 
     #day-in-life {
       background: #fff;
     }
-    .day-intro { max-width: 650px; margin-bottom: 3.5rem; }
-    .timeline { display: flex; flex-direction: column; gap: 0; position: relative; }
+
+    .day-intro {
+      max-width: 650px;
+      margin-bottom: 3.5rem;
+    }
+
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      position: relative;
+    }
+
     .timeline::before {
-      content: ""; position: absolute; left: 2.5rem; top: 0; bottom: 0;
-      width: 2px; background: linear-gradient(to bottom, var(--accent), var(--primary), var(--dark));
+      content: "";
+      position: absolute;
+      left: 2.5rem;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(to bottom, var(--accent), var(--primary), var(--dark));
       border-radius: 2px;
     }
-    .timeline-block { display: grid; grid-template-columns: 5rem 1fr; gap: 2rem; padding: 2rem 0; position: relative; }
-    .timeline-block + .timeline-block { border-top: 1px solid rgba(26,79,156,0.07); }
-    .timeline-marker {
-      display: flex; flex-direction: column; align-items: center; gap: 0.5rem; padding-top: 0.25rem;
-    }
-    .timeline-dot {
-      width: 42px; height: 42px; border-radius: 50%;
-      background: var(--primary); color: #fff;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1rem; box-shadow: 0 4px 16px rgba(26,79,156,0.35);
-      flex-shrink: 0; position: relative; z-index: 2;
-    }
-    .timeline-time { font-size: 0.68rem; font-weight: 700; color: var(--primary); text-transform: uppercase; letter-spacing: 0.08em; white-space: nowrap; }
-    .timeline-content { padding: 0.25rem 0 1rem; }
-    .timeline-content h3 { font-size: 1.15rem; font-weight: 700; color: #1a1a1a; margin-bottom: 1rem; }
-    .timeline-items { display: flex; flex-direction: column; gap: 0.75rem; }
-    .timeline-item {
-      display: flex; align-items: flex-start; gap: 0.9rem;
-      background: var(--light); border-radius: 1rem; padding: 1rem 1.25rem;
-      font-size: 0.875rem; color: #333; line-height: 1.6;
-    }
-    .timeline-item i { color: var(--primary); margin-top: 0.15rem; font-size: 0.9rem; flex-shrink: 0; }
 
-    #support { background: var(--light); }
-    .support-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; margin-top: 3rem; }
+    .timeline-block {
+      display: grid;
+      grid-template-columns: 5rem 1fr;
+      gap: 2rem;
+      padding: 2rem 0;
+      position: relative;
+    }
+
+    .timeline-block+.timeline-block {
+      border-top: 1px solid rgba(26, 79, 156, 0.07);
+    }
+
+    .timeline-marker {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      padding-top: 0.25rem;
+    }
+
+    .timeline-dot {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: var(--primary);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      box-shadow: 0 4px 16px rgba(26, 79, 156, 0.35);
+      flex-shrink: 0;
+      position: relative;
+      z-index: 2;
+    }
+
+    .timeline-time {
+      font-size: 0.68rem;
+      font-weight: 700;
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      white-space: nowrap;
+    }
+
+    .timeline-content {
+      padding: 0.25rem 0 1rem;
+    }
+
+    .timeline-content h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #1a1a1a;
+      margin-bottom: 1rem;
+    }
+
+    .timeline-items {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .timeline-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.9rem;
+      background: var(--light);
+      border-radius: 1rem;
+      padding: 1rem 1.25rem;
+      font-size: 0.875rem;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    .timeline-item i {
+      color: var(--primary);
+      margin-top: 0.15rem;
+      font-size: 0.9rem;
+      flex-shrink: 0;
+    }
+
+    #support {
+      background: var(--light);
+    }
+
+    .support-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
     .support-card {
-      border-radius: 1.75rem; padding: 2.25rem 2rem; position: relative; overflow: hidden;
-      border: 1px solid rgba(26,79,156,0.1);
+      border-radius: 1.75rem;
+      padding: 2.25rem 2rem;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(26, 79, 156, 0.1);
       transition: transform 0.25s, box-shadow 0.25s;
     }
-    .support-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(26,79,156,0.12); }
-    .support-card.dark { background: var(--primary); color: #fff; }
-    .support-card.light { background: #fff; }
-    .support-card::before {
-      content: ""; position: absolute; top: -50px; right: -50px;
-      width: 180px; height: 180px; border-radius: 50%;
-      background: rgba(255,255,255,0.05);
-    }
-    .support-card-icon { font-size: 2.5rem; margin-bottom: 1.25rem; }
-    .support-card.dark .support-card-icon { color: var(--accent); }
-    .support-card.light .support-card-icon { color: var(--primary); }
-    .support-card h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: 0.75rem; }
-    .support-card.dark h3 { color: #fff; }
-    .support-card p { font-size: 0.875rem; line-height: 1.8; }
-    .support-card.dark p { color: rgba(255,255,255,0.75); }
-    .support-card.light p { color: #444; }
-    .support-card ul { margin-top: 1rem; display: flex; flex-direction: column; gap: 0.5rem; list-style: none; }
-    .support-card ul li { display: flex; align-items: center; gap: 0.6rem; font-size: 0.83rem; }
-    .support-card.dark ul li { color: rgba(255,255,255,0.85); }
-    .support-card.light ul li { color: #333; }
-    .support-card ul li i { font-size: 0.7rem; }
-    .support-card.dark ul li i { color: var(--accent); }
-    .support-card.light ul li i { color: var(--primary); }
 
-    #photo-strip { background: #fff; padding: 3rem 5%; }
-    .photo-strip-label { margin-bottom: 2rem; }
-    .photo-row { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 1rem; }
-    .photo-item { border-radius: 1.5rem; overflow: hidden; }
-    .photo-item img { width: 100%; height: 100%; object-fit: cover; display: block; }
-    .photo-item.tall { aspect-ratio: 3/4; }
-    .photo-item.sq { aspect-ratio: 1/1; }
+    .support-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 40px rgba(26, 79, 156, 0.12);
+    }
+
+    .support-card.dark {
+      background: var(--primary);
+      color: #fff;
+    }
+
+    .support-card.light {
+      background: #fff;
+    }
+
+    .support-card::before {
+      content: "";
+      position: absolute;
+      top: -50px;
+      right: -50px;
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    .support-card-icon {
+      font-size: 2.5rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .support-card.dark .support-card-icon {
+      color: var(--accent);
+    }
+
+    .support-card.light .support-card-icon {
+      color: var(--primary);
+    }
+
+    .support-card h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+    }
+
+    .support-card.dark h3 {
+      color: #fff;
+    }
+
+    .support-card p {
+      font-size: 0.875rem;
+      line-height: 1.8;
+    }
+
+    .support-card.dark p {
+      color: rgba(255, 255, 255, 0.75);
+    }
+
+    .support-card.light p {
+      color: #444;
+    }
+
+    .support-card ul {
+      margin-top: 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      list-style: none;
+    }
+
+    .support-card ul li {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 0.83rem;
+    }
+
+    .support-card.dark ul li {
+      color: rgba(255, 255, 255, 0.85);
+    }
+
+    .support-card.light ul li {
+      color: #333;
+    }
+
+    .support-card ul li i {
+      font-size: 0.7rem;
+    }
+
+    .support-card.dark ul li i {
+      color: var(--accent);
+    }
+
+    .support-card.light ul li i {
+      color: var(--primary);
+    }
+
+    #photo-strip {
+      background: #fff;
+      padding: 3rem 5%;
+    }
+
+    .photo-strip-label {
+      margin-bottom: 2rem;
+    }
+
+    .photo-row {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .photo-item {
+      border-radius: 1.5rem;
+      overflow: hidden;
+    }
+
+    .photo-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .photo-item.tall {
+      aspect-ratio: 3/4;
+    }
+
+    .photo-item.sq {
+      aspect-ratio: 1/1;
+    }
 
     #cta-band {
       background: linear-gradient(135deg, var(--primary) 0%, var(--dark) 100%);
-      text-align: center; padding: 5rem 5%; color: #fff; position: relative; overflow: hidden;
+      text-align: center;
+      padding: 5rem 5%;
+      color: #fff;
+      position: relative;
+      overflow: hidden;
     }
-    #cta-band::before { content: ""; position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 80%, rgba(56,189,248,0.12) 0%, transparent 60%); }
-    .cta-band-inner { position: relative; z-index: 2; max-width: 600px; margin: 0 auto; }
-    #cta-band h2 { font-size: clamp(1.8rem, 4vw, 3rem); font-weight: 700; line-height: 1.2; margin-bottom: 1rem; }
-    #cta-band p { font-size: 0.95rem; color: rgba(255,255,255,0.75); line-height: 1.8; margin-bottom: 2rem; }
-    .cta-band-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+    #cta-band::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 50% 80%, rgba(56, 189, 248, 0.12) 0%, transparent 60%);
+    }
+
+    .cta-band-inner {
+      position: relative;
+      z-index: 2;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    #cta-band h2 {
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+
+    #cta-band p {
+      font-size: 0.95rem;
+      color: rgba(255, 255, 255, 0.75);
+      line-height: 1.8;
+      margin-bottom: 2rem;
+    }
+
+    .cta-band-btns {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
     .btn-cta-white {
-      background: #fff; color: var(--primary); border: none;
-      padding: 0.8rem 2rem; border-radius: 999px; font-weight: 700; font-size: 0.9rem;
-      cursor: pointer; transition: box-shadow 0.2s;
+      background: #fff;
+      color: var(--primary);
+      border: none;
+      padding: 0.8rem 2rem;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: box-shadow 0.2s;
     }
-    .btn-cta-white:hover { box-shadow: 0 8px 24px rgba(255,255,255,0.3); }
+
+    .btn-cta-white:hover {
+      box-shadow: 0 8px 24px rgba(255, 255, 255, 0.3);
+    }
+
     .btn-cta-outline {
-      background: transparent; color: #fff; border: 2px solid rgba(255,255,255,0.5);
-      padding: 0.78rem 2rem; border-radius: 999px; font-weight: 700; font-size: 0.9rem;
-      cursor: pointer; transition: border-color 0.2s, background 0.2s;
+      background: transparent;
+      color: #fff;
+      border: 2px solid rgba(255, 255, 255, 0.5);
+      padding: 0.78rem 2rem;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: border-color 0.2s, background 0.2s;
     }
-    .btn-cta-outline:hover { border-color: #fff; background: rgba(255,255,255,0.1); }
+
+    .btn-cta-outline:hover {
+      border-color: #fff;
+      background: rgba(255, 255, 255, 0.1);
+    }
 
     footer {
-      background: var(--primary); color: rgba(255,255,255,0.85); padding: 3rem 5% 1.5rem;
+      background: var(--primary);
+      color: rgba(255, 255, 255, 0.85);
+      padding: 3rem 5% 1.5rem;
     }
+
     .footer-grid {
-      display: grid; grid-template-columns: 1.4fr repeat(3,1fr); gap: 2rem;
-      border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 2.5rem; margin-bottom: 1.5rem;
+      display: grid;
+      grid-template-columns: 1.4fr repeat(3, 1fr);
+      gap: 2rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      padding-bottom: 2.5rem;
+      margin-bottom: 1.5rem;
     }
-    .footer-logo { font-family: 'Inter Tight', sans-serif; font-size: 1.4rem; font-weight: 700; color: #fff; margin-bottom: 0.75rem; }
-    .footer-desc { font-size: 0.8rem; opacity: 0.6; line-height: 1.7; margin-bottom: 1rem; }
-    .footer-contact-info { font-size: 0.8rem; opacity: 0.7; line-height: 2; }
-    .footer-contact-info i { color: var(--accent); margin-right: 0.35rem; }
-    .footer-col-heading { font-weight: 700; font-size: 0.85rem; color: #fff; margin-bottom: 1rem; }
-    .footer-col-list { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
-    .footer-col-list a { font-size: 0.8rem; color: rgba(255,255,255,0.6); transition: color 0.2s; }
-    .footer-col-list a:hover { color: var(--accent); }
-    .footer-bottom { display: flex; align-items: center; justify-content: space-between; font-size: 0.75rem; opacity: 0.5; flex-wrap: wrap; gap: 0.75rem; }
-    .footer-socials { display: flex; gap: 1rem; }
-    .footer-socials a { color: rgba(255,255,255,0.6); font-size: 1rem; transition: color 0.2s; }
-    .footer-socials a:hover { color: var(--accent); }
-    .footer-bottom-links { display: flex; gap: 1.5rem; }
-    .footer-bottom-links a { color: rgba(255,255,255,0.5); font-size: 0.75rem; }
 
-    ::-webkit-scrollbar { width: 6px; }
-    ::-webkit-scrollbar-track { background: var(--light); }
-    ::-webkit-scrollbar-thumb { background: var(--primary); border-radius: 3px; }
+    .footer-logo {
+      font-family: 'Inter Tight', sans-serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 0.75rem;
+    }
 
-    @keyframes fadeUp { from { opacity:0; transform:translateY(28px); } to { opacity:1; transform:translateY(0); } }
-    .fade-up { animation: fadeUp 0.7s ease both; }
+    .footer-desc {
+      font-size: 0.8rem;
+      opacity: 0.6;
+      line-height: 1.7;
+      margin-bottom: 1rem;
+    }
+
+    .footer-contact-info {
+      font-size: 0.8rem;
+      opacity: 0.7;
+      line-height: 2;
+    }
+
+    .footer-contact-info i {
+      color: var(--accent);
+      margin-right: 0.35rem;
+    }
+
+    .footer-col-heading {
+      font-weight: 700;
+      font-size: 0.85rem;
+      color: #fff;
+      margin-bottom: 1rem;
+    }
+
+    .footer-col-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .footer-col-list a {
+      font-size: 0.8rem;
+      color: rgba(255, 255, 255, 0.6);
+      transition: color 0.2s;
+    }
+
+    .footer-col-list a:hover {
+      color: var(--accent);
+    }
+
+    .footer-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 0.75rem;
+      opacity: 0.5;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .footer-socials {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .footer-socials a {
+      color: rgba(255, 255, 255, 0.6);
+      font-size: 1rem;
+      transition: color 0.2s;
+    }
+
+    .footer-socials a:hover {
+      color: var(--accent);
+    }
+
+    .footer-bottom-links {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .footer-bottom-links a {
+      color: rgba(255, 255, 255, 0.5);
+      font-size: 0.75rem;
+    }
+
+    ::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: var(--light);
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: var(--primary);
+      border-radius: 3px;
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(28px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .fade-up {
+      animation: fadeUp 0.7s ease both;
+    }
 
     @media (max-width: 1100px) {
-      .amenities-grid { grid-template-columns: repeat(2, 1fr); }
+      .amenities-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
     }
+
     @media (max-width: 900px) {
-      #campus-overview { grid-template-columns: 1fr; gap: 2.5rem; }
-      .support-grid { grid-template-columns: 1fr; }
-      .photo-row { grid-template-columns: 1fr 1fr; }
-      .photo-item.tall { grid-column: 1 / -1; aspect-ratio: 16/7; }
-      .footer-grid { grid-template-columns: 1fr 1fr; }
-      .footer-grid > div:first-child { grid-column: 1 / -1; }
+      #campus-overview {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+
+      .support-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .photo-row {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .photo-item.tall {
+        grid-column: 1 / -1;
+        aspect-ratio: 16/7;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .footer-grid>div:first-child {
+        grid-column: 1 / -1;
+      }
     }
+
     @media (max-width: 768px) {
-      .nav-links, .nav-cta { display: none; }
-      #mob-btn { display: block; }
-      section { padding: 3.5rem 5%; }
-      .page-hero { padding: 3.5rem 5% 3rem; }
-      .amenities-grid { grid-template-columns: 1fr; }
-      .timeline::before { left: 1.5rem; }
-      .timeline-block { grid-template-columns: 3.5rem 1fr; gap: 1.25rem; }
-      .timeline-dot { width: 34px; height: 34px; font-size: 0.85rem; }
-      .footer-grid { grid-template-columns: 1fr 1fr; }
-      .footer-grid > div:first-child { grid-column: 1 / -1; }
-      .footer-bottom { flex-direction: column; align-items: flex-start; gap: 1rem; }
+
+      .nav-links,
+      .nav-cta {
+        display: none;
+      }
+
+      #mob-btn {
+        display: block;
+      }
+
+      section {
+        padding: 3.5rem 5%;
+      }
+
+      .page-hero {
+        padding: 3.5rem 5% 3rem;
+      }
+
+      .amenities-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .timeline::before {
+        left: 1.5rem;
+      }
+
+      .timeline-block {
+        grid-template-columns: 3.5rem 1fr;
+        gap: 1.25rem;
+      }
+
+      .timeline-dot {
+        width: 34px;
+        height: 34px;
+        font-size: 0.85rem;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .footer-grid>div:first-child {
+        grid-column: 1 / -1;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+      }
     }
+
     @media (max-width: 480px) {
-      .overview-stats { grid-template-columns: 1fr 1fr; }
-      .photo-row { grid-template-columns: 1fr; }
-      .photo-item.tall, .photo-item.sq { aspect-ratio: 16/9; grid-column: auto; }
-      .cta-band-btns { flex-direction: column; align-items: stretch; }
-      .btn-cta-white, .btn-cta-outline { text-align: center; }
-      .footer-grid { grid-template-columns: 1fr; }
-      .footer-grid > div:first-child { grid-column: auto; }
-      .footer-bottom-links { flex-direction: column; gap: 0.5rem; }
+      .overview-stats {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .photo-row {
+        grid-template-columns: 1fr;
+      }
+
+      .photo-item.tall,
+      .photo-item.sq {
+        aspect-ratio: 16/9;
+        grid-column: auto;
+      }
+
+      .cta-band-btns {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .btn-cta-white,
+      .btn-cta-outline {
+        text-align: center;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-grid>div:first-child {
+        grid-column: auto;
+      }
+
+      .footer-bottom-links {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
 
     }
-    p{font-size: clamp(1.4rem,2.5vw,2.2rem); line-height: 1.35; color: #1a1a1a; margin: 0.75rem 0 1.5rem;}
+
+    p {
+      font-size: clamp(1.4rem, 2.5vw, 2.2rem);
+      line-height: 1.35;
+      color: #1a1a1a;
+      margin: 0.75rem 0 1.5rem;
+    }
   </style>
 </head>
 
@@ -386,7 +1202,8 @@
         <span style="color:var(--accent)">Facilities</span>
       </div>
       <h1>World-Class <span>Facilities</span><br />Right at Home</h1>
-      <p>Our modern, secure campus is thoughtfully designed to give every resident the comfort, safety, and community they deserve — all within one nurturing environment.</p>
+      <p>Our modern, secure campus is thoughtfully designed to give every resident the comfort, safety, and community
+        they deserve — all within one nurturing environment.</p>
       <div class="hero-chips">
         <span class="hero-chip"><i class="fa-solid fa-building"></i> Modern Secure Campus</span>
         <span class="hero-chip"><i class="fa-solid fa-shield-heart"></i> 24/7 Safety & Support</span>
@@ -398,7 +1215,8 @@
 
   <section id="campus-overview">
     <div class="overview-img fade-up">
-      <img src="https://images.unsplash.com/photo-1576765607924-3f7b8410a787?w=900&q=80" alt="Lydville Care campus overview" />
+      <img src="https://images.unsplash.com/photo-1576765607924-3f7b8410a787?w=900&q=80"
+        alt="Lydville Care campus overview" />
       <div class="overview-img-badge">
         <i class="fa-solid fa-house-chimney"></i>
         <div>
@@ -411,10 +1229,13 @@
       <div class="section-label">Our Campus</div>
       <h2 class="section-title">A space designed for every stage of senior life</h2>
       <p>
-        At Lydville Care and Elders' Home, our campus has been purposefully built to create a safe, beautiful, and fully equipped living environment. From private residences to vibrant communal spaces, every corner of our facility is crafted with our residents' comfort and joy in mind.
+        At Lydville Care and Elders' Home, our campus has been purposefully built to create a safe, beautiful, and fully
+        equipped living environment. From private residences to vibrant communal spaces, every corner of our facility is
+        crafted with our residents' comfort and joy in mind.
       </p>
       <p>
-        Our state-of-the-art grounds include independent residences, assisted living spaces, communal areas, an outdoor relaxation space, and a dedicated leisure centre — all within a professionally managed and secure environment.
+        Our state-of-the-art grounds include independent residences, assisted living spaces, communal areas, an outdoor
+        relaxation space, and a dedicated leisure centre — all within a professionally managed and secure environment.
       </p>
       <div class="overview-stats">
         <div class="overview-stat">
@@ -438,7 +1259,8 @@
       <div>
         <div class="section-label">Our Amenities</div>
         <h2 class="section-title">Everything a resident could need</h2>
-        <p class="section-sub">Each amenity is carefully selected and maintained to support the physical, social, and emotional wellbeing of every resident.</p>
+        <p class="section-sub">Each amenity is carefully selected and maintained to support the physical, social, and
+          emotional wellbeing of every resident.</p>
       </div>
       <a href="index.html#contact-us"><button class="btn-primary" style="white-space:nowrap;">Book a Tour →</button></a>
     </div>
@@ -446,13 +1268,15 @@
 
       <div class="amenity-card fade-up">
         <div class="amenity-card-img">
-          <img src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=700&q=80" alt="Private furnished apartments" />
+          <img src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=700&q=80"
+            alt="Private furnished apartments" />
           <div class="amenity-card-img-overlay"></div>
         </div>
         <div class="amenity-card-body">
           <div class="amenity-icon-wrap"><i class="fa-solid fa-house-chimney"></i></div>
           <div class="amenity-title">Private, Fully Furnished Apartments</div>
-          <div class="amenity-desc">Our independent living apartments are thoughtfully furnished and designed to feel like home — offering privacy, comfort, and a personal space each resident can truly call their own.</div>
+          <div class="amenity-desc">Our independent living apartments are thoughtfully furnished and designed to feel
+            like home — offering privacy, comfort, and a personal space each resident can truly call their own.</div>
           <div class="amenity-tags">
             <span class="amenity-tag">Independent Living</span>
             <span class="amenity-tag">Private Residence</span>
@@ -462,13 +1286,15 @@
 
       <div class="amenity-card fade-up">
         <div class="amenity-card-img">
-          <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=700&q=80" alt="Common lounges and recreation" />
+          <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=700&q=80"
+            alt="Common lounges and recreation" />
           <div class="amenity-card-img-overlay"></div>
         </div>
         <div class="amenity-card-body">
           <div class="amenity-icon-wrap"><i class="fa-solid fa-people-group"></i></div>
           <div class="amenity-title">Common Lounges & Recreational Areas</div>
-          <div class="amenity-desc">Vibrant shared spaces where residents socialise, build lifelong friendships, and enjoy group activities — from book clubs and painting to indoor games and music sessions.</div>
+          <div class="amenity-desc">Vibrant shared spaces where residents socialise, build lifelong friendships, and
+            enjoy group activities — from book clubs and painting to indoor games and music sessions.</div>
           <div class="amenity-tags">
             <span class="amenity-tag">Social Space</span>
             <span class="amenity-tag">Community</span>
@@ -478,13 +1304,15 @@
 
       <div class="amenity-card fade-up">
         <div class="amenity-card-img">
-          <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=700&q=80" alt="Outdoor relaxation space" />
+          <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=700&q=80"
+            alt="Outdoor relaxation space" />
           <div class="amenity-card-img-overlay"></div>
         </div>
         <div class="amenity-card-body">
           <div class="amenity-icon-wrap"><i class="fa-solid fa-leaf"></i></div>
           <div class="amenity-title">Outdoor Relaxation Space</div>
-          <div class="amenity-desc">A serene and beautifully maintained outdoor area where residents can enjoy morning walks, gentle exercise, fresh air, and the simple pleasure of nature in a safe and secure setting.</div>
+          <div class="amenity-desc">A serene and beautifully maintained outdoor area where residents can enjoy morning
+            walks, gentle exercise, fresh air, and the simple pleasure of nature in a safe and secure setting.</div>
           <div class="amenity-tags">
             <span class="amenity-tag">Outdoor</span>
             <span class="amenity-tag">Wellness</span>
@@ -494,13 +1322,15 @@
 
       <div class="amenity-card fade-up">
         <div class="amenity-card-img">
-          <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=700&q=80" alt="24/7 medical support" />
+          <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=700&q=80"
+            alt="24/7 medical support" />
           <div class="amenity-card-img-overlay"></div>
         </div>
         <div class="amenity-card-body">
           <div class="amenity-icon-wrap"><i class="fa-solid fa-kit-medical"></i></div>
           <div class="amenity-title">24/7 Medical Support & Emergency Response</div>
-          <div class="amenity-desc">Around-the-clock professional medical support and emergency response systems ensure the health and safety of every resident — giving families complete peace of mind at all times.</div>
+          <div class="amenity-desc">Around-the-clock professional medical support and emergency response systems ensure
+            the health and safety of every resident — giving families complete peace of mind at all times.</div>
           <div class="amenity-tags">
             <span class="amenity-tag">Medical</span>
             <span class="amenity-tag">24/7 Care</span>
@@ -510,13 +1340,16 @@
 
       <div class="amenity-card fade-up">
         <div class="amenity-card-img">
-          <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=700&q=80" alt="Healthy nutritious dining" />
+          <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=700&q=80"
+            alt="Healthy nutritious dining" />
           <div class="amenity-card-img-overlay"></div>
         </div>
         <div class="amenity-card-body">
           <div class="amenity-icon-wrap"><i class="fa-solid fa-utensils"></i></div>
           <div class="amenity-title">Nutritious Dining & Healthy Meal Plans</div>
-          <div class="amenity-desc">Healthy, delicious meals prepared by our chefs and tailored to individual dietary needs — supporting residents' overall health and vitality, from a hearty breakfast to a light evening dinner.</div>
+          <div class="amenity-desc">Healthy, delicious meals prepared by our chefs and tailored to individual dietary
+            needs — supporting residents' overall health and vitality, from a hearty breakfast to a light evening
+            dinner.</div>
           <div class="amenity-tags">
             <span class="amenity-tag">Dining</span>
             <span class="amenity-tag">Nutrition</span>
@@ -526,13 +1359,15 @@
 
       <div class="amenity-card fade-up">
         <div class="amenity-card-img">
-          <img src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=700&q=80" alt="Transportation services" />
+          <img src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=700&q=80"
+            alt="Transportation services" />
           <div class="amenity-card-img-overlay"></div>
         </div>
         <div class="amenity-card-body">
           <div class="amenity-icon-wrap"><i class="fa-solid fa-van-shuttle"></i></div>
           <div class="amenity-title">Transportation Services</div>
-          <div class="amenity-desc">Reliable, comfortable transport for medical appointments, outings, and family visits — so residents stay connected to the wider world and never miss what matters most to them.</div>
+          <div class="amenity-desc">Reliable, comfortable transport for medical appointments, outings, and family visits
+            — so residents stay connected to the wider world and never miss what matters most to them.</div>
           <div class="amenity-tags">
             <span class="amenity-tag">Transport</span>
             <span class="amenity-tag">Appointments</span>
@@ -547,7 +1382,8 @@
     <div class="day-intro fade-up">
       <div class="section-label">Daily Life</div>
       <h2 class="section-title">A day in the life at Lydville Care</h2>
-      <p class="section-sub">Every day at Lydville is filled with purpose, connection, and comfort. Here's a glimpse of what life looks like for our residents.</p>
+      <p class="section-sub">Every day at Lydville is filled with purpose, connection, and comfort. Here's a glimpse of
+        what life looks like for our residents.</p>
     </div>
     <div class="timeline">
 
@@ -561,11 +1397,13 @@
           <div class="timeline-items">
             <div class="timeline-item">
               <i class="fa-solid fa-person-walking"></i>
-              Start the day with gentle exercise or a morning walk in our serene outdoor environment — breathing in fresh air and setting a positive tone for the hours ahead.
+              Start the day with gentle exercise or a morning walk in our serene outdoor environment — breathing in
+              fresh air and setting a positive tone for the hours ahead.
             </div>
             <div class="timeline-item">
               <i class="fa-solid fa-mug-hot"></i>
-              Enjoy a hearty, nutritious breakfast lovingly prepared by our dedicated chefs, tailored to individual dietary requirements and served in our warm communal dining area.
+              Enjoy a hearty, nutritious breakfast lovingly prepared by our dedicated chefs, tailored to individual
+              dietary requirements and served in our warm communal dining area.
             </div>
           </div>
         </div>
@@ -581,11 +1419,13 @@
           <div class="timeline-items">
             <div class="timeline-item">
               <i class="fa-solid fa-palette"></i>
-              Participate in group activities such as public affairs discussions, painting, indoor games, book clubs, or music sessions — keeping the mind active and connections alive.
+              Participate in group activities such as public affairs discussions, painting, indoor games, book clubs, or
+              music sessions — keeping the mind active and connections alive.
             </div>
             <div class="timeline-item">
               <i class="fa-solid fa-bowl-food"></i>
-              Relish a delicious, chef-prepared lunch in the warm company of fellow residents — a highlight of the day filled with conversation, laughter, and good food.
+              Relish a delicious, chef-prepared lunch in the warm company of fellow residents — a highlight of the day
+              filled with conversation, laughter, and good food.
             </div>
           </div>
         </div>
@@ -601,11 +1441,13 @@
           <div class="timeline-items">
             <div class="timeline-item">
               <i class="fa-solid fa-film"></i>
-              Relax with a quiet movie night, a cultural event, or a storytelling session — evenings at Lydville are filled with the warmth of community and the comfort of familiar faces.
+              Relax with a quiet movie night, a cultural event, or a storytelling session — evenings at Lydville are
+              filled with the warmth of community and the comfort of familiar faces.
             </div>
             <div class="timeline-item">
               <i class="fa-solid fa-house-heart"></i>
-              Unwind in the privacy of your cosy, fully furnished residence after a light dinner — ending each day with a deep sense of belonging, safety, and peace.
+              Unwind in the privacy of your cosy, fully furnished residence after a light dinner — ending each day with
+              a deep sense of belonging, safety, and peace.
             </div>
           </div>
         </div>
@@ -618,13 +1460,15 @@
     <div class="fade-up">
       <div class="section-label">Health & Wellness</div>
       <h2 class="section-title">Comprehensive support, every hour</h2>
-      <p class="section-sub">Our health and wellness programmes go beyond physical care — we nurture the whole person.</p>
+      <p class="section-sub">Our health and wellness programmes go beyond physical care — we nurture the whole person.
+      </p>
     </div>
     <div class="support-grid">
       <div class="support-card dark fade-up">
         <div class="support-card-icon"><i class="fa-solid fa-heart-pulse"></i></div>
         <h3>Health & Wellness Programmes</h3>
-        <p>Regular health checks, tailored exercise routines, and wellness initiatives designed to promote physical and mental wellbeing for every resident.</p>
+        <p>Regular health checks, tailored exercise routines, and wellness initiatives designed to promote physical and
+          mental wellbeing for every resident.</p>
         <ul>
           <li><i class="fa-solid fa-check"></i> Routine health monitoring & checks</li>
           <li><i class="fa-solid fa-check"></i> Supervised medication management</li>
@@ -635,7 +1479,8 @@
       <div class="support-card light fade-up">
         <div class="support-card-icon"><i class="fa-solid fa-people-arrows"></i></div>
         <h3>Recreational & Social Activities</h3>
-        <p>A rich variety of social, educational, and recreational programmes to keep every resident engaged, stimulated, and actively connected to their community.</p>
+        <p>A rich variety of social, educational, and recreational programmes to keep every resident engaged,
+          stimulated, and actively connected to their community.</p>
         <ul>
           <li><i class="fa-solid fa-check"></i> Group discussions & educational sessions</li>
           <li><i class="fa-solid fa-check"></i> Arts, crafts, music & cultural events</li>
@@ -646,7 +1491,8 @@
       <div class="support-card light fade-up">
         <div class="support-card-icon"><i class="fa-solid fa-shield-halved"></i></div>
         <h3>24/7 Professional Security</h3>
-        <p>Round-the-clock professional care and on-site security to ensure every resident is safe, looked after, and at ease — no matter the time of day or night.</p>
+        <p>Round-the-clock professional care and on-site security to ensure every resident is safe, looked after, and at
+          ease — no matter the time of day or night.</p>
         <ul>
           <li><i class="fa-solid fa-check"></i> On-site security personnel at all times</li>
           <li><i class="fa-solid fa-check"></i> Emergency response systems in all rooms</li>
@@ -657,7 +1503,8 @@
       <div class="support-card dark fade-up">
         <div class="support-card-icon"><i class="fa-solid fa-spa"></i></div>
         <h3>Relaxation & Leisure Centre</h3>
-        <p>A dedicated space for rest, recreation, and personal wellbeing — offering residents a calm retreat to unwind, recharge, and enjoy quiet moments of restorative peace.</p>
+        <p>A dedicated space for rest, recreation, and personal wellbeing — offering residents a calm retreat to unwind,
+          recharge, and enjoy quiet moments of restorative peace.</p>
         <ul>
           <li><i class="fa-solid fa-check"></i> Quiet relaxation & reading spaces</li>
           <li><i class="fa-solid fa-check"></i> Leisure & recreation activities</li>
@@ -672,7 +1519,8 @@
   <section id="cta-band">
     <div class="cta-band-inner fade-up">
       <h2>Come see it for yourself.</h2>
-      <p>Words and photos only go so far — visit Lydville Care at Isheri Brooks Estate, Kara Isheri, Ogun State and experience the warmth, comfort, and community first-hand.</p>
+      <p>Words and photos only go so far — visit Lydville Care at Isheri Brooks Estate, Kara Isheri, Ogun State and
+        experience the warmth, comfort, and community first-hand.</p>
       <div class="cta-band-btns">
         <a href="index.html#contact-us"><button class="btn-cta-white">Schedule a Visit →</button></a>
         <a href="index.html#contact-us"><button class="btn-cta-outline">Send Us a Message</button></a>
@@ -684,9 +1532,11 @@
     <div class="footer-grid">
       <div>
         <div class="footer-logo">Lydville Care.</div>
-        <p class="footer-desc">A warm, nurturing home where every senior is celebrated, supported, and empowered to live life to the fullest — with dignity and grace.</p>
+        <p class="footer-desc">A warm, nurturing home where every senior is celebrated, supported, and empowered to live
+          life to the fullest — with dignity and grace.</p>
         <div class="footer-contact-info">
-          <div><i class="fa-solid fa-location-dot"></i> Isheri Brooks Estate, beside World Filling Station, Kara Isheri, Ogun State</div>
+          <div><i class="fa-solid fa-location-dot"></i> Isheri Brooks Estate, beside World Filling Station, Kara Isheri,
+            Ogun State</div>
           <div><i class="fa-solid fa-phone"></i> To be announced</div>
           <div><i class="fa-solid fa-envelope"></i> To be announced</div>
         </div>
@@ -737,12 +1587,12 @@
   </footer>
 
   <script>
-    const mobBtn     = document.getElementById("mob-btn");
-    const mobClose   = document.getElementById("mob-close");
+    const mobBtn = document.getElementById("mob-btn");
+    const mobClose = document.getElementById("mob-close");
     const mobOverlay = document.getElementById("mob-overlay");
-    const mobDrawer  = document.getElementById("mob-drawer");
-    const openMenu   = () => { mobDrawer.classList.add("open");    mobOverlay.classList.add("open");    document.body.style.overflow = "hidden"; };
-    const closeMenu  = () => { mobDrawer.classList.remove("open"); mobOverlay.classList.remove("open"); document.body.style.overflow = ""; };
+    const mobDrawer = document.getElementById("mob-drawer");
+    const openMenu = () => { mobDrawer.classList.add("open"); mobOverlay.classList.add("open"); document.body.style.overflow = "hidden"; };
+    const closeMenu = () => { mobDrawer.classList.remove("open"); mobOverlay.classList.remove("open"); document.body.style.overflow = ""; };
     mobBtn.addEventListener("click", openMenu);
     mobClose.addEventListener("click", closeMenu);
     mobOverlay.addEventListener("click", closeMenu);
@@ -757,5 +1607,19 @@
     });
   </script>
 
+  <!--Start of Tawk.to Script-->
+  <script type="text/javascript">
+    var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+    (function () {
+      var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+      s1.async = true;
+      s1.src = 'https://embed.tawk.to/6a323e3d45840f1d494247c7/1jra468ao';
+      s1.charset = 'UTF-8';
+      s1.setAttribute('crossorigin', '*');
+      s0.parentNode.insertBefore(s1, s0);
+    })();
+  </script>
+  <!--End of Tawk.to Script-->
 </body>
+
 </html>
