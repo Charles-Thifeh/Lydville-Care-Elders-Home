@@ -188,39 +188,7 @@
     }
     .value-name { font-weight: 700; font-size: 0.95rem; color: var(--primary); margin-bottom: 0.5rem; }
     .value-desc { font-size: 0.78rem; color: #555; line-height: 1.65; }
-
-    /* ─── SERVICES ─── */
-    #services { background: #fff; }
-    .services-intro { display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 3rem; flex-wrap: wrap; gap: 1rem; }
-    .services-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; }
-    .service-card {
-      border-radius: 1.75rem; overflow: hidden;
-      border: 1px solid rgba(26,79,156,0.08);
-      transition: box-shadow 0.25s, transform 0.25s;
-      display: flex; flex-direction: column;
-    }
-    .service-card:hover { transform: translateY(-4px); box-shadow: 0 20px 50px rgba(26,79,156,0.13); }
-    .service-card-top {
-      background: var(--card); padding: 2rem 2rem 1.5rem;
-      display: flex; align-items: flex-start; gap: 1.25rem;
-    }
-    .service-card:nth-child(1) .service-card-top { background: #DBEAFE; }
-    .service-card:nth-child(2) .service-card-top { background: #E0F2FE; }
-    .service-card:nth-child(3) .service-card-top { background: #EFF6FF; }
-    .service-card:nth-child(4) .service-card-top { background: #DBEAFE; }
-    .service-card-icon {
-      width: 54px; height: 54px; border-radius: 14px; background: var(--primary);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1.4rem; color: #fff; flex-shrink: 0;
-    }
-    .service-card-meta h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 0.3rem; color: #1a1a1a; }
-    .service-card-meta .s-tag { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--primary); }
-    .service-card-body { padding: 1.5rem 2rem 2rem; flex: 1; }
-    .service-card-body p { font-size: 0.875rem; color: #444; line-height: 1.8; }
-    .service-card-body ul { margin-top: 1rem; display: flex; flex-direction: column; gap: 0.5rem; }
-    .service-card-body ul li { display: flex; align-items: flex-start; gap: 0.6rem; font-size: 0.82rem; color: #333; }
-    .service-card-body ul li i { color: var(--primary); margin-top: 0.15rem; font-size: 0.75rem; flex-shrink: 0; }
-    .service-card-footer { padding: 0 2rem 1.5rem; }
+    
     .btn-service {
       display: inline-flex; align-items: center; gap: 0.4rem;
       background: var(--primary); color: #fff; border: none;
@@ -399,11 +367,10 @@
     </a>
     <div class="nav-links">
       <a href="index.html" class="nav-link">Home</a>
-      <a href="about.html" class="nav-link active">About Us</a>
-      <a href="servi" class="nav-link">Services</a>
+      <a href="services.html" class="nav-link">Services</a>
       <a href="facilities.html" class="nav-link">Facilities</a>
       <a href="testimonails.html" class="nav-link">Testimonials</a>
-      <a href="index.html#blog" class="nav-link">Blog</a>
+      <a href="blog.html" class="nav-link">Blog</a>
       <a href="index.html#contact-us" class="nav-link">Contact Us</a>
     </div>
     <div class="nav-cta">
@@ -421,10 +388,9 @@
     </div>
     <div id="mob-links">
       <a href="index.html" class="nav-link">Home</a>
-      <a href="about.html" class="nav-link active">About Us</a>
-      <a href="index.html#services" class="nav-link">Services</a>
-      <a href="index.html#facilities" class="nav-link">Facilities</a>
-      <a href="index.html#testimonials" class="nav-link">Testimonials</a>
+      <a href="services.html" class="nav-link">Services</a>
+      <a href="facilities.html" class="nav-link">Facilities</a>
+      <a href="testimonial.html" class="nav-link">Testimonials</a>
       <a href="index.html#contact-us" class="nav-link">Contact Us</a>
     </div>
     <div class="mob-actions">
@@ -455,7 +421,7 @@
   <!-- ═══ WHO WE ARE ═══ -->
   <section id="who">
     <div class="who-img fade-up">
-      <img src="https://images.unsplash.com/photo-1630596158821-6ee6583fef66?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Happy senior residents at Lydville Care" />
+      <img src="https://media.gettyimages.com/id/1481885130/photo/portrait-of-a-senior-couple-with-adult-son.jpg?s=612x612&w=0&k=20&c=YDRMOjh9_guNKeIKCRmJy7rc4ACBOxwH368UbHsEims=" alt="Happy senior residents at Lydville Care" />
       <div class="who-img-badge">
         <span class="who-img-badge-icon"><i class="fa-solid fa-heart-pulse"></i></span>
         <div>
@@ -556,113 +522,6 @@
     </div>
   </section>
 
-  <!-- ═══ OUR SERVICES ═══ -->
-  <section id="services">
-    <div class="services-intro">
-      <div>
-        <div class="section-label">Products &amp; Services</div>
-        <h2 class="section-title">Care tailored to every need</h2>
-        <p class="section-sub">From full assisted living to flexible short stays and in-home care giver support, we have a solution for every senior and every family.</p>
-      </div>
-      <a href="index.html#contact-us"><button class="btn-primary" style="white-space:nowrap;">Enquire Now →</button></a>
-    </div>
-    <div class="services-grid">
-
-      <!-- Assisted Living -->
-      <div class="service-card fade-up">
-        <div class="service-card-top">
-          <div class="service-card-icon"><i class="fa-solid fa-house-medical"></i></div>
-          <div class="service-card-meta">
-            <div class="s-tag">Assisted Living</div>
-            <h3>Lydville Assisted Living Facility</h3>
-          </div>
-        </div>
-        <div class="service-card-body">
-          <p>Personalised care plans for seniors requiring help with daily activities. Ideal for seniors who are not able to live at home safely but don't require intensive medical care.</p>
-          <ul>
-            <li><i class="fa-solid fa-check"></i> Help with dressing, bathing &amp; grooming</li>
-            <li><i class="fa-solid fa-check"></i> Transportation &amp; housekeeping support</li>
-            <li><i class="fa-solid fa-check"></i> Cooking &amp; meal preparation</li>
-            <li><i class="fa-solid fa-check"></i> Medication management &amp; monitoring</li>
-          </ul>
-        </div>
-        <div class="service-card-footer">
-          <a href="index.html#contact-us"><button class="btn-service">Enquire Now <i class="fa-solid fa-arrow-right"></i></button></a>
-        </div>
-      </div>
-
-      <!-- Independent Living -->
-      <div class="service-card fade-up">
-        <div class="service-card-top">
-          <div class="service-card-icon"><i class="fa-solid fa-person-shelter"></i></div>
-          <div class="service-card-meta">
-            <div class="s-tag">Independent Living</div>
-            <h3>Lydville Independent Living Community</h3>
-          </div>
-        </div>
-        <div class="service-card-body">
-          <p>Comfortable and private residences for seniors who want to maintain their independence with access to support services when needed. Loneliness is one of the biggest challenges the elderly face — independent living allows seniors to socialise and live among like individuals.</p>
-          <ul>
-            <li><i class="fa-solid fa-check"></i> Private, comfortable residences</li>
-            <li><i class="fa-solid fa-check"></i> Active social community &amp; events</li>
-            <li><i class="fa-solid fa-check"></i> Optional support services on demand</li>
-            <li><i class="fa-solid fa-check"></i> Safe, secure, and professionally staffed</li>
-          </ul>
-        </div>
-        <div class="service-card-footer">
-          <a href="index.html#contact-us"><button class="btn-service">Enquire Now <i class="fa-solid fa-arrow-right"></i></button></a>
-        </div>
-      </div>
-
-      <!-- Short Stay -->
-      <div class="service-card fade-up">
-        <div class="service-card-top">
-          <div class="service-card-icon"><i class="fa-solid fa-calendar-check"></i></div>
-          <div class="service-card-meta">
-            <div class="s-tag">Short Stay / Respite</div>
-            <h3>Lydville Short Stay Living Facility</h3>
-          </div>
-        </div>
-        <div class="service-card-body">
-          <p>A flexible short-stay option for seniors who desire a change of environment or wish to experience our community. Also ideal for families who don't want to leave their senior loved ones at home alone while on holiday or out of town.</p>
-          <ul>
-            <li><i class="fa-solid fa-check"></i> Temporary &amp; respite placements</li>
-            <li><i class="fa-solid fa-check"></i> Full access to all community facilities</li>
-            <li><i class="fa-solid fa-check"></i> Flexible stay durations</li>
-            <li><i class="fa-solid fa-check"></i> Peace of mind for travelling families</li>
-          </ul>
-        </div>
-        <div class="service-card-footer">
-          <a href="index.html#contact-us"><button class="btn-service">Enquire Now <i class="fa-solid fa-arrow-right"></i></button></a>
-        </div>
-      </div>
-
-      <!-- Care Givers -->
-      <div class="service-card fade-up">
-        <div class="service-card-top">
-          <div class="service-card-icon"><i class="fa-solid fa-hand-holding-medical"></i></div>
-          <div class="service-card-meta">
-            <div class="s-tag">Professional Care Givers</div>
-            <h3>Lydville Care Givers</h3>
-          </div>
-        </div>
-        <div class="service-card-body">
-          <p>Our professional care givers ensure the wellbeing and safety of those in their care, acting as a liaison between the resident, their family, and healthcare providers.</p>
-          <ul>
-            <li><i class="fa-solid fa-check"></i> Assistance with bathing, dressing &amp; meals</li>
-            <li><i class="fa-solid fa-check"></i> Health monitoring &amp; medication administration</li>
-            <li><i class="fa-solid fa-check"></i> Coordination of medical appointments</li>
-            <li><i class="fa-solid fa-check"></i> Compassionate daily companionship</li>
-          </ul>
-        </div>
-        <div class="service-card-footer">
-          <a href="index.html#contact-us"><button class="btn-service">Enquire Now <i class="fa-solid fa-arrow-right"></i></button></a>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
   <!-- ═══ USP STRIP ═══ -->
   <section id="usp">
     <div class="usp-inner">
@@ -705,7 +564,7 @@
     </div>
   </section>
 
-  <!-- ═══ TEAM TEASER ═══ -->
+  <!-- ═══ TEAM TEASER ═══ 
   <section id="team">
     <div class="team-header">
       <div>
@@ -749,7 +608,7 @@
         </div>
       </div>
     </div>
-  </section>
+  </section>-->
 
   <!-- ═══ LOCATION ═══ -->
   <section id="location">
@@ -838,7 +697,7 @@
           <li><a href="about.html#vmv">Our Vision &amp; Mission</a></li>
           <li><a href="about.html#vmv">Core Values</a></li>
           <li><a href="about.html#team">Our Team</a></li>
-          <li><a href="index.html#blog">News &amp; Events</a></li>
+          <li><a href="blog.html">News &amp; Events</a></li>
         </ul>
       </div>
       <div>
